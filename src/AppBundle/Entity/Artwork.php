@@ -46,7 +46,7 @@ class Artwork
 
     /**
      * @var
-     * @ManyToMany(targetEntity="Artist", inversedBy="artwork")
+     * @ManyToMany(targetEntity="Artist", mappedBy="artwork")
      *
      * @JoinTable(name="artwork_artist")
      */
