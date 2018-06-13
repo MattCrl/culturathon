@@ -5,15 +5,9 @@
         <h1>{{ artwork.title }}</h1>
         <p>{{ artwork.date }}</p>
         <p>{{ artwork.image }}</p>
-        <p>{{ artwork.date }}</p>
-
-        {{ dump(artwork.artists) }}
 
         {% for artist in artwork.artists %}
-            <h2>{{ artist.name }}</h2>
+            <p>{{ artist.name }}</p>
         {% endfor %}
-
-
     </div>
-
 {% endblock %}
