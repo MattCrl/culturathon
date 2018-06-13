@@ -1,14 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block layout %}
+    <img src="{{ artwork.image }}" alt="Ceci est une balise de type ALT" class="artwork-img">
     <div class="container">
-        <img src="{{ artwork.image }}" alt="Ceci est une balise de type ALT">
-        <h1>{{ artwork.title }}</h1>
+
+        <h1 class="mt-3 mb-3">{{ artwork.title }}</h1>
+        {% for artist in artwork.artists %}
+            <h2>{{ artist.name }}</h2>
+        {% endfor %}
         <p>{{ artwork.date }}</p>
 
-        {% for artist in artwork.artists %}
-            <p>{{ artist.name }}</p>
-        {% endfor %}
+
         <p>{{ artwork.description }}</p>
     </div>
 {% endblock %}
