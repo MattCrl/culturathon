@@ -2,9 +2,9 @@
 
 {% block layout %}
     <div class="container">
+        <img src="{{ artwork.image }}" alt="Ceci est une balise de type ALT">
         <h1>{{ artwork.title }}</h1>
         <p>{{ artwork.date }}</p>
-        <p>{{ artwork.image }}</p>
 
         {% for artist in artwork.artists %}
             <p>{{ artist.name }}</p>
