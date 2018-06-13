@@ -38,6 +38,13 @@ class Artwork
     private $date;
 
     /**
+     * @var
+     *
+     * @ORM\Column(name="image", type="string", length=255)
+     */
+    private $image;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="approximative_date", type="boolean")
@@ -236,5 +243,29 @@ class Artwork
     public function getMuseum()
     {
         return $this->museum;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Artwork
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }
