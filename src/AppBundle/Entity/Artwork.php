@@ -59,6 +59,13 @@ class Artwork
      */
     private $cartel;
 
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="Museum", inversedBy="artwork")
+     */
+    private $museum;
+
 
     /**
      * Get id
@@ -141,5 +148,93 @@ class Artwork
     {
         return $this->approximativeDate;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->artist = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add artist
+     *
+     * @param \AppBundle\Entity\Artist $artist
+     *
+     * @return Artwork
+     */
+    public function addArtist(\AppBundle\Entity\Artist $artist)
+    {
+        $this->artist[] = $artist;
+
+        return $this;
+    }
+
+    /**
+     * Remove artist
+     *
+     * @param \AppBundle\Entity\Artist $artist
+     */
+    public function removeArtist(\AppBundle\Entity\Artist $artist)
+    {
+        $this->artist->removeElement($artist);
+    }
+
+    /**
+     * Get artist
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtist()
+    {
+        return $this->artist;
+    }
+
+    /**
+     * Set cartel
+     *
+     * @param \AppBundle\Entity\Cartel $cartel
+     *
+     * @return Artwork
+     */
+    public function setCartel(\AppBundle\Entity\Cartel $cartel = null)
+    {
+        $this->cartel = $cartel;
+
+        return $this;
+    }
+
+    /**
+     * Get cartel
+     *
+     * @return \AppBundle\Entity\Cartel
+     */
+    public function getCartel()
+    {
+        return $this->cartel;
+    }
+
+    /**
+     * Set museum
+     *
+     * @param \AppBundle\Entity\Museum $museum
+     *
+     * @return Artwork
+     */
+    public function setMuseum(\AppBundle\Entity\Museum $museum = null)
+    {
+        $this->museum = $museum;
+
+        return $this;
+    }
+
+    /**
+     * Get museum
+     *
+     * @return \AppBundle\Entity\Museum
+     */
+    public function getMuseum()
+    {
+        return $this->museum;
+    }
+}

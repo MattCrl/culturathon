@@ -256,4 +256,45 @@ class Artist
     {
         return $this->isApproxDeath;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->artwork = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add artwork
+     *
+     * @param \AppBundle\Entity\Artwork $artwork
+     *
+     * @return Artist
+     */
+    public function addArtwork(\AppBundle\Entity\Artwork $artwork)
+    {
+        $this->artwork[] = $artwork;
+
+        return $this;
+    }
+
+    /**
+     * Remove artwork
+     *
+     * @param \AppBundle\Entity\Artwork $artwork
+     */
+    public function removeArtwork(\AppBundle\Entity\Artwork $artwork)
+    {
+        $this->artwork->removeElement($artwork);
+    }
+
+    /**
+     * Get artwork
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtwork()
+    {
+        return $this->artwork;
+    }
 }
