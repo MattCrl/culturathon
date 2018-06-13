@@ -141,5 +141,69 @@ class Artwork
     {
         return $this->approximativeDate;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->artist = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add artist
+     *
+     * @param \AppBundle\Entity\Artist $artist
+     *
+     * @return Artwork
+     */
+    public function addArtist(\AppBundle\Entity\Artist $artist)
+    {
+        $this->artist[] = $artist;
+
+        return $this;
+    }
+
+    /**
+     * Remove artist
+     *
+     * @param \AppBundle\Entity\Artist $artist
+     */
+    public function removeArtist(\AppBundle\Entity\Artist $artist)
+    {
+        $this->artist->removeElement($artist);
+    }
+
+    /**
+     * Get artist
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtist()
+    {
+        return $this->artist;
+    }
+
+    /**
+     * Set cartel
+     *
+     * @param \AppBundle\Entity\Cartel $cartel
+     *
+     * @return Artwork
+     */
+    public function setCartel(\AppBundle\Entity\Cartel $cartel = null)
+    {
+        $this->cartel = $cartel;
+
+        return $this;
+    }
+
+    /**
+     * Get cartel
+     *
+     * @return \AppBundle\Entity\Cartel
+     */
+    public function getCartel()
+    {
+        return $this->cartel;
+    }
+}
