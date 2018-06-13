@@ -57,5 +57,17 @@ class CartelFixtures extends Fixture
         $manager->persist($cartel10);
 
         $manager->flush();
+
+        $this->addReference('cartel1', $cartel1);
+        $this->addReference('cartel2', $cartel2);
+        $this->addReference('cartel3', $cartel3);
+        $this->addReference('cartel4', $cartel4);
+        $this->addReference('cartel5', $cartel5);
+        $this->addReference('cartel6', $cartel6);
+        $this->addReference('cartel7', $cartel7);
+        $this->addReference('cartel8', $cartel8);
+        $this->addReference('cartel9', $cartel9);
+        $this->addReference('cartel10', $cartel10);
+
     }
 }
