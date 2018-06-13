@@ -17,7 +17,7 @@ class ArtistFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $artist1 = new Artist();
-        $artist1->setName('Jan BRUEGHEl le jeun');
+        $artist1->setName('Jan BRUEGHEl le jeune');
         $artist1->setBirthdate(1601);
         $artist1->setDeathdate(1678);
         $artist1->setBirthplace('Anvers');
