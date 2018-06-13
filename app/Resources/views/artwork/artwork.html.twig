@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block layout %}
+    <div class="container">
+        <h1>{{ artwork.title }}</h1>
+        <p>{{ artwork.date }}</p>
+        <p>{{ artwork.image }}</p>
+        <p>{{ artwork.date }}</p>
+
+        {{ dump(artwork) }}
+    </div>
+
+{% endblock %}

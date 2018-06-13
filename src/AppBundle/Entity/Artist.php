@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
@@ -75,6 +76,7 @@ class Artist
      * @var
      *
      * @ManyToMany(targetEntity="Artwork", inversedBy="artist")
+     * @JoinTable(name="artwork_artist")
      */
     private $artwork;
 

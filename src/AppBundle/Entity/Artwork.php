@@ -55,7 +55,6 @@ class Artwork
      * @var
      * @ManyToMany(targetEntity="Artist", mappedBy="artwork")
      *
-     * @JoinTable(name="artwork_artist")
      */
     private $artist;
 
