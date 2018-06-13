@@ -30,6 +30,13 @@ class Artwork
     private $title;
 
     /**
+     * @var
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="date", type="integer", nullable=true)
@@ -273,5 +280,29 @@ class Artwork
     public function getMuseum()
     {
         return $this->museum;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Artwork
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }
