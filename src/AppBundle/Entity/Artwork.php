@@ -21,48 +21,56 @@ class Artwork
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
+
     /**
      * @var int
      *
      * @ORM\Column(name="date", type="integer", nullable=true)
      */
     private $date;
+
     /**
      * @var
      *
      * @ORM\Column(name="image", type="string", length=255)
      */
     private $image;
+
     /**
      * @var bool
      *
      * @ORM\Column(name="approximative_date", type="boolean")
      */
     private $approximativeDate;
+
     /**
      * @var
      * @ManyToMany(targetEntity="Artist", mappedBy="artwork")
      *
      */
     private $artist;
+
     /**
      * @var
      *
      * @ORM\ManyToOne(targetEntity="Cartel", inversedBy="artwork")
      */
     private $cartel;
+
     /**
      * @var
      *
      * @ORM\ManyToOne(targetEntity="Museum", inversedBy="artwork")
      */
     private $museum;
+
     /**
      * Get id
      *
@@ -72,6 +80,15 @@ class Artwork
     {
         return $this->id;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
     /**
      * Set title
      *
@@ -84,6 +101,7 @@ class Artwork
         $this->title = $title;
         return $this;
     }
+
     /**
      * Get title
      *
@@ -93,6 +111,7 @@ class Artwork
     {
         return $this->title;
     }
+
     /**
      * Set date
      *
@@ -105,6 +124,7 @@ class Artwork
         $this->date = $date;
         return $this;
     }
+
     /**
      * Get date
      *
@@ -114,6 +134,7 @@ class Artwork
     {
         return $this->date;
     }
+
     /**
      * Set approximativeDate
      *
@@ -126,6 +147,7 @@ class Artwork
         $this->approximativeDate = $approximativeDate;
         return $this;
     }
+
     /**
      * Get approximativeDate
      *
@@ -135,6 +157,7 @@ class Artwork
     {
         return $this->approximativeDate;
     }
+
     /**
      * Constructor
      */
@@ -142,6 +165,7 @@ class Artwork
     {
         $this->artist = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
     /**
      * Add artist
      *
@@ -154,6 +178,7 @@ class Artwork
         $this->artist[] = $artist;
         return $this;
     }
+
     /**
      * Remove artist
      *
@@ -163,6 +188,7 @@ class Artwork
     {
         $this->artist->removeElement($artist);
     }
+
     /**
      * Get artist
      *
@@ -172,6 +198,7 @@ class Artwork
     {
         return $this->artist;
     }
+
     /**
      * Set cartel
      *
@@ -184,6 +211,7 @@ class Artwork
         $this->cartel = $cartel;
         return $this;
     }
+
     /**
      * Get cartel
      *
@@ -193,6 +221,7 @@ class Artwork
     {
         return $this->cartel;
     }
+
     /**
      * Set museum
      *
@@ -205,6 +234,7 @@ class Artwork
         $this->museum = $museum;
         return $this;
     }
+
     /**
      * Get museum
      *
@@ -214,6 +244,7 @@ class Artwork
     {
         return $this->museum;
     }
+
     /**
      * Set image
      *
@@ -226,6 +257,7 @@ class Artwork
         $this->image = $image;
         return $this;
     }
+
     /**
      * Get image
      *
@@ -235,4 +267,5 @@ class Artwork
     {
         return $this->image;
     }
+
 }
