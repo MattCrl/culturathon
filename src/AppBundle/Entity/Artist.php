@@ -14,10 +14,6 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Artist
 {
-    public function __toString()
-    {
-        return $this->getName();
-    }
 
     /**
      * @var int
@@ -80,16 +76,31 @@ class Artist
     /**
      * @var
      *
-     * @ManyToMany(targetEntity="Artwork", inversedBy="artist")
-     * @JoinTable(name="artwork_artist")
+     * @ManyToMany(targetEntity="Artwork", mappedBy="artists")
+     *
      */
-    private $artwork;
+    private $artworks;
 
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->artworks = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -137,7 +148,7 @@ class Artist
     /**
      * Get birthdate
      *
-     * @return int
+     * @return integer
      */
     public function getBirthdate()
     {
@@ -161,7 +172,7 @@ class Artist
     /**
      * Get deathdate
      *
-     * @return int
+     * @return integer
      */
     public function getDeathdate()
     {
@@ -233,7 +244,7 @@ class Artist
     /**
      * Get isApproxBirth
      *
-     * @return bool
+     * @return boolean
      */
     public function getIsApproxBirth()
     {
@@ -257,19 +268,11 @@ class Artist
     /**
      * Get isApproxDeath
      *
-     * @return bool
+     * @return boolean
      */
     public function getIsApproxDeath()
     {
         return $this->isApproxDeath;
-    }
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->artwork = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -281,7 +284,7 @@ class Artist
      */
     public function addArtwork(\AppBundle\Entity\Artwork $artwork)
     {
-        $this->artwork[] = $artwork;
+        $this->artworks[] = $artwork;
 
         return $this;
     }
@@ -293,16 +296,16 @@ class Artist
      */
     public function removeArtwork(\AppBundle\Entity\Artwork $artwork)
     {
-        $this->artwork->removeElement($artwork);
+        $this->artworks->removeElement($artwork);
     }
 
     /**
-     * Get artwork
+     * Get artworks
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getArtwork()
+    public function getArtworks()
     {
-        return $this->artwork;
+        return $this->artworks;
     }
 }

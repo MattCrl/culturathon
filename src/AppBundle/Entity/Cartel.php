@@ -33,7 +33,7 @@ class Cartel
      *
      * @ORM\OneToMany(targetEntity="Artwork", mappedBy="cartel")
      */
-    private $artwork;
+    private $artworks;
 
     /**
      * @return string
@@ -44,9 +44,17 @@ class Cartel
     }
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->artworks = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -76,13 +84,6 @@ class Cartel
     {
         return $this->name;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->artwork = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Add artwork
@@ -93,7 +94,7 @@ class Cartel
      */
     public function addArtwork(\AppBundle\Entity\Artwork $artwork)
     {
-        $this->artwork[] = $artwork;
+        $this->artworks[] = $artwork;
 
         return $this;
     }
@@ -105,16 +106,16 @@ class Cartel
      */
     public function removeArtwork(\AppBundle\Entity\Artwork $artwork)
     {
-        $this->artwork->removeElement($artwork);
+        $this->artworks->removeElement($artwork);
     }
 
     /**
-     * Get artwork
+     * Get artworks
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getArtwork()
+    public function getArtworks()
     {
-        return $this->artwork;
+        return $this->artworks;
     }
 }

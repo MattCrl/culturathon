@@ -37,7 +37,7 @@ class Artwork
     private $date;
 
     /**
-     * @var
+     * @var string
      *
      * @ORM\Column(name="image", type="string", length=255)
      */
@@ -51,35 +51,25 @@ class Artwork
     private $approximativeDate;
 
     /**
-     * @var
-     * @ManyToMany(targetEntity="Artist", mappedBy="artwork")
+     *
+     * @ManyToMany(targetEntity="Artist", inversedBy="artworks")
+     * @JoinTable(name="artwork_artist")
      *
      */
-    private $artist;
+    private $artists;
 
     /**
-     * @var
      *
-     * @ORM\ManyToOne(targetEntity="Cartel", inversedBy="artwork")
+     * @ORM\ManyToOne(targetEntity="Cartel", inversedBy="artworks")
      */
     private $cartel;
 
     /**
      * @var
      *
-     * @ORM\ManyToOne(targetEntity="Museum", inversedBy="artwork")
+     * @ORM\ManyToOne(targetEntity="Museum", inversedBy="artworks")
      */
     private $museum;
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return string
@@ -87,6 +77,24 @@ class Artwork
     public function __toString()
     {
         return $this->getTitle();
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->artists = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -99,6 +107,7 @@ class Artwork
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -122,17 +131,42 @@ class Artwork
     public function setDate($date)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
      * Get date
      *
-     * @return int
+     * @return integer
      */
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Artwork
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**
@@ -145,25 +179,18 @@ class Artwork
     public function setApproximativeDate($approximativeDate)
     {
         $this->approximativeDate = $approximativeDate;
+
         return $this;
     }
 
     /**
      * Get approximativeDate
      *
-     * @return bool
+     * @return boolean
      */
     public function getApproximativeDate()
     {
         return $this->approximativeDate;
-    }
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->artist = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -175,7 +202,8 @@ class Artwork
      */
     public function addArtist(\AppBundle\Entity\Artist $artist)
     {
-        $this->artist[] = $artist;
+        $this->artists[] = $artist;
+
         return $this;
     }
 
@@ -186,17 +214,17 @@ class Artwork
      */
     public function removeArtist(\AppBundle\Entity\Artist $artist)
     {
-        $this->artist->removeElement($artist);
+        $this->artists->removeElement($artist);
     }
 
     /**
-     * Get artist
+     * Get artists
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getArtist()
+    public function getArtists()
     {
-        return $this->artist;
+        return $this->artists;
     }
 
     /**
@@ -209,6 +237,7 @@ class Artwork
     public function setCartel(\AppBundle\Entity\Cartel $cartel = null)
     {
         $this->cartel = $cartel;
+
         return $this;
     }
 
@@ -232,6 +261,7 @@ class Artwork
     public function setMuseum(\AppBundle\Entity\Museum $museum = null)
     {
         $this->museum = $museum;
+
         return $this;
     }
 
@@ -244,28 +274,4 @@ class Artwork
     {
         return $this->museum;
     }
-
-    /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return Artwork
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
 }
