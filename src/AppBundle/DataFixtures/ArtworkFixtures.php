@@ -29,7 +29,7 @@ class ArtworkFixtures extends Fixture implements DependentFixtureInterface
         $artwork1->setCartel($this->getReference('cartel1'));
         $artwork1->setDate(1615);
         $artwork1->setTitle("L’Embarquement des animaux dans l’arche de Noé");
-        $artwork1->setImage('http://via.placeholder.com/350x150');
+        $artwork1->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork1->setMuseum();
         $artwork1->setDescription("Ce tableau est l’une des versions d’une composition à succès peinte par Jan Brueghel le Jeune entre 1613 et 1615. Le peintre s’inspire d’une œuvre élaborée par son père. Jan Brueghel l’Ancien (dit Brueghel de Velours) vers 1610 et il n’est d’ailleurs pas interdit de voir dans le petit tableau d’Orléans une œuvre de collaboration entre le père et le fils. Le thème des animaux réunis par Noé dans l’arche à été traité à de nombreuses reprises par l’atelier des Brueghel. La version d’Orléans est elle-même connue par des répliques, attestant de sa grande popularité. 
 
@@ -41,7 +41,7 @@ Son sujet, emprunté à un chapitre de la Genèse, offre le prétexte à un dép
         $artwork2->setCartel($this->getReference('cartel2'));
         $artwork2->setDate(1837);
         $artwork2->setTitle("Episode de la campagne d’Egypte – Bataille d’Héliopolis le 20 mars 1800");
-        $artwork2->setImage('http://via.placeholder.com/350x150');
+        $artwork2->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork2->setMuseum();
         $artwork2->setDescription("Léon Cogniet a largement contribué au musée d’Histoire de France fondé à Versailles par Louis-Philippe, avec notamment les commandes de La Bataille du Thabor (aujourd’hui déposé à Orléans) et La bataille d’Héliopolis, toujours à Versailles. 
 Ce tableau reprend le même sujet dans un format plus réduit destiné au marché de l’art, particulièrement actif sous la Monarchie de Juillet. 
@@ -53,7 +53,7 @@ Ce tableau reprend le même sujet dans un format plus réduit destiné au march�
         $artwork3->setCartel($this->getReference('cartel3'));
         $artwork3->setDate(1824);
         $artwork3->setTitle("Tête de vielle femme");
-        $artwork3->setImage('http://via.placeholder.com/350x150');
+        $artwork3->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork3->setMuseum();
         $artwork3->setDescription("En 1824, Delacroix expose au Salon Scène de massacres de Scio qui rend hommage à la résistance et au courage du peuple grec révolté contre la domination turque. Cette étude prépare la tête de vielle femme à droite de la composition. Léon Cogniet, rendant visite à Delacroix en mai 1824, lors de l’exécution de l’œuvre, admira beaucoup ce personnage qu’il rapprocha de toiles de leur ami commun, Géricault, récemment disparu.");
         $manager->persist($artwork3);
@@ -63,7 +63,7 @@ Ce tableau reprend le même sujet dans un format plus réduit destiné au march�
         $artwork4->setCartel($this->getReference('cartel4'));
         $artwork4->setDate(1519);
         $artwork4->setTitle("La Vierge à l’Enfant avec saint Jean Baptiste et saint Joseph");
-        $artwork4->setImage('http://via.placeholder.com/350x150');
+        $artwork4->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork4->setMuseum();
         $artwork4->setDescription("Dès le XVIIᵉ siècle, alors que le tableau était au château de Versailles, Charles Le Brun (1619-1690) s’interrogeait sur son attribution, et son état de conservation était jugé critique. L’œuvre a été définitivement rendue à Corrège en 1921 par Roberto Longhi (1890-1970) et sa restauration récente, rendue indispensable par une altération des repeints et des vernis successifs, permet de retrouver une composition homogène, le style et la matière raffinée du peintre. 
 
@@ -77,7 +77,7 @@ Ce tableau appartient à la jeunesse de l’artiste. Fort d’un séjour à Rome
         $artwork5->setCartel($this->getReference('cartel5'));
         $artwork5->setDate(1751);
         $artwork5->setTitle("Aignan – Thomas Desfriches");
-        $artwork5->setImage('http://via.placeholder.com/350x150');
+        $artwork5->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork5->setMuseum();
         $artwork5->setDescription("L’acquisition en vente publique de ce portrait – sans doute le chef-d’œuvre de Perronneau – est un évènement historique dans l’histoire du musée. Resté chez les descendants de Desfriches depuis le XVIIIᵉ siècle, convoité génération après génération par les plus grands marchands et collectionneurs (il a atteint le prix record de 412.500 euros) son entrée au musée d’Orléans a enrichi les collections non seulement de son plus beau pastel, mais également du portrait du fondateur du musée.
 
@@ -91,7 +91,7 @@ Perronneau a réalisé ce portrait lors de son premier long séjour à Orléans,
         $artwork6->setCartel($this->getReference('cartel6'));
         $artwork6->setDate(2016);
         $artwork6->setTitle("Paysage Urbain");
-        $artwork6->setImage('http://via.placeholder.com/350x150');
+        $artwork6->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork6->setMuseum();
         $artwork6->setDescription("Man&Pia est un duo d'artistes formé par Manolo Chétien et Pia Loro, qui se sont rencontrés en 1987 aux Arts appliqués Olivier de Serres à Paris. Lui est créateur graphique et photographe, elle, architecte d'intérieur et plasticienne. Ensemble, ils fondent un studio de design graphique en 1996 et développent un procédé de photographie plastique novateur qui leur permet de faire de nombreuses expositions en France et à l'étranger. 
 
@@ -104,7 +104,7 @@ En parallèle de leur activité de design, Manolo et Pia ont également un ateli
         $artwork7->setCartel($this->getReference('cartel7'));
         $artwork7->setDate(null);
         $artwork7->setTitle("Paysage");
-        $artwork7->setImage('http://via.placeholder.com/350x150');
+        $artwork7->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork7->setMuseum();
         $artwork7->setDescription("Man&Pia est un duo d'artistes formé par Manolo Chétien et Pia Loro, qui se sont rencontrés en 1987 aux Arts appliqués Olivier de Serres à Paris. Lui est créateur graphique et photographe, elle, architecte d'intérieur et plasticienne. Ensemble, ils fondent un studio de design graphique en 1996 et développent un procédé de photographie plastique novateur qui leur permet de faire de nombreuses expositions en France et à l'étranger. 
 
@@ -118,7 +118,7 @@ En parallèle de leur activité de design, Manolo et Pia ont également un ateli
         $artwork8->setCartel($this->getReference('cartel8'));
         $artwork8->setDate(null);
         $artwork8->setTitle('');
-        $artwork8->setImage('http://via.placeholder.com/350x150');
+        $artwork8->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork8->setMuseum();
         $artwork8->setDescription("Man&Pia est un duo d'artistes formé par Manolo Chétien et Pia Loro, qui se sont rencontrés en 1987 aux Arts appliqués Olivier de Serres à Paris. Lui est créateur graphique et photographe, elle, architecte d'intérieur et plasticienne. Ensemble, ils fondent un studio de design graphique en 1996 et développent un procédé de photographie plastique novateur qui leur permet de faire de nombreuses expositions en France et à l'étranger. 
  
@@ -132,7 +132,7 @@ En parallèle de leur activité de design, Manolo et Pia ont également un ateli
         $artwork9->setCartel($this->getReference('cartel9'));
         $artwork9->setDate(null);
         $artwork9->setTitle('');
-        $artwork9->setImage('http://via.placeholder.com/350x150');
+        $artwork9->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork9->setMuseum();
         $artwork9->setDescription("Manolo Chrétien est un photographe plasticien. Fils de pilote ayant grandi près de la base aérienne à Orange, il se fascine très jeune, pour l'aéronautique, et ces fantastiques machines crées pour accélérer le temps. Avions, voitures et fusées sont les symboles d'un monde en mouvement qui repousse toutes les frontières. Manolo Chrétien en capture la beauté magique pour l’imprimer sur aluminium. Ses ‘alluminations’ sont le miroir de l'ambition humaine. 
 L’artiste a prolongé sa recherche photographique sur la fluidité et les reflets en investiguant la dynamique des vagues et des flux aquatiques. Au travers son regard, l’océan devient une onde métallique, une mécanique naturelle. Manolo Chrétien vit et travaille en France.
@@ -145,7 +145,7 @@ L’artiste a prolongé sa recherche photographique sur la fluidité et les refl
         $artwork10->setCartel($this->getReference('cartel10'));
         $artwork10->setDate(null);
         $artwork10->setTitle('Dassault Mystère IV A');
-        $artwork10->setImage('http://via.placeholder.com/350x150');
+        $artwork10->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
         $artwork10->setMuseum();
         $artwork10->setDescription("Manolo Chrétien est un photographe plasticien. Fils de pilote ayant grandi près de la base aérienne à Orange, il se fascine très jeune, pour l'aéronautique, et ces fantastiques machines crées pour accélérer le temps. Avions, voitures et fusées sont les symboles d'un monde en mouvement qui repousse toutes les frontières. Manolo Chrétien en capture la beauté magique pour l’imprimer sur aluminium. Ses ‘alluminations’ sont le miroir de l'ambition humaine. 
 L’artiste a prolongé sa recherche photographique sur la fluidité et les reflets en investiguant la dynamique des vagues et des flux aquatiques. Au travers son regard, l’océan devient une onde métallique, une mécanique naturelle. Manolo Chrétien vit et travaille en France.
