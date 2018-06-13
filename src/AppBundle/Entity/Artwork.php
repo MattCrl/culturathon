@@ -39,14 +39,14 @@ class Artwork
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=255)
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
     private $image;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="approximative_date", type="boolean")
+     * @ORM\Column(name="approximative_date", type="boolean", nullable=true)
      */
     private $approximativeDate;
 
