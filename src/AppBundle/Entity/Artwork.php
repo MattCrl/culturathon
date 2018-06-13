@@ -1,11 +1,8 @@
 <?php
-
 namespace AppBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
-
 /**
  * Artwork
  *
@@ -22,44 +19,49 @@ class Artwork
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
-
     /**
      * @var int
      *
      * @ORM\Column(name="date", type="integer", nullable=true)
      */
     private $date;
-
+    /**
+     * @var
+     *
+     * @ORM\Column(name="image", type="string", length=255)
+     */
+    private $image;
     /**
      * @var bool
      *
      * @ORM\Column(name="approximative_date", type="boolean")
      */
     private $approximativeDate;
-
     /**
      * @var
-     * @ManyToMany(targetEntity="Artist", inversedBy="artwork")
+     * @ManyToMany(targetEntity="Artist", mappedBy="artwork")
      *
      * @JoinTable(name="artwork_artist")
      */
     private $artist;
-
     /**
      * @var
      *
      * @ORM\ManyToOne(targetEntity="Cartel", inversedBy="artwork")
      */
     private $cartel;
-
-
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="Museum", inversedBy="artwork")
+     */
+    private $museum;
     /**
      * Get id
      *
@@ -69,7 +71,6 @@ class Artwork
     {
         return $this->id;
     }
-
     /**
      * Set title
      *
@@ -80,10 +81,8 @@ class Artwork
     public function setTitle($title)
     {
         $this->title = $title;
-
         return $this;
     }
-
     /**
      * Get title
      *
@@ -93,7 +92,6 @@ class Artwork
     {
         return $this->title;
     }
-
     /**
      * Set date
      *
@@ -104,10 +102,8 @@ class Artwork
     public function setDate($date)
     {
         $this->date = $date;
-
         return $this;
     }
-
     /**
      * Get date
      *
@@ -117,7 +113,6 @@ class Artwork
     {
         return $this->date;
     }
-
     /**
      * Set approximativeDate
      *
@@ -128,10 +123,8 @@ class Artwork
     public function setApproximativeDate($approximativeDate)
     {
         $this->approximativeDate = $approximativeDate;
-
         return $this;
     }
-
     /**
      * Get approximativeDate
      *
@@ -148,7 +141,6 @@ class Artwork
     {
         $this->artist = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
     /**
      * Add artist
      *
@@ -159,10 +151,8 @@ class Artwork
     public function addArtist(\AppBundle\Entity\Artist $artist)
     {
         $this->artist[] = $artist;
-
         return $this;
     }
-
     /**
      * Remove artist
      *
@@ -172,7 +162,6 @@ class Artwork
     {
         $this->artist->removeElement($artist);
     }
-
     /**
      * Get artist
      *
@@ -182,7 +171,6 @@ class Artwork
     {
         return $this->artist;
     }
-
     /**
      * Set cartel
      *
@@ -193,10 +181,8 @@ class Artwork
     public function setCartel(\AppBundle\Entity\Cartel $cartel = null)
     {
         $this->cartel = $cartel;
-
         return $this;
     }
-
     /**
      * Get cartel
      *
@@ -205,5 +191,47 @@ class Artwork
     public function getCartel()
     {
         return $this->cartel;
+    }
+    /**
+     * Set museum
+     *
+     * @param \AppBundle\Entity\Museum $museum
+     *
+     * @return Artwork
+     */
+    public function setMuseum(\AppBundle\Entity\Museum $museum = null)
+    {
+        $this->museum = $museum;
+        return $this;
+    }
+    /**
+     * Get museum
+     *
+     * @return \AppBundle\Entity\Museum
+     */
+    public function getMuseum()
+    {
+        return $this->museum;
+    }
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Artwork
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+        return $this;
+    }
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

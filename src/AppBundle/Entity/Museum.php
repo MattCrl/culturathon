@@ -42,6 +42,13 @@ class Museum
      */
     private $country;
 
+    /**
+     * @var
+     *
+     * @ORM\OneToMany(targetEntity="Artwork", mappedBy="museum")
+     */
+    private $artwork;
+
 
     /**
      * Get id
@@ -123,5 +130,46 @@ class Museum
     public function getCountry()
     {
         return $this->country;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->artwork = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add artwork
+     *
+     * @param \AppBundle\Entity\Artwork $artwork
+     *
+     * @return Museum
+     */
+    public function addArtwork(\AppBundle\Entity\Artwork $artwork)
+    {
+        $this->artwork[] = $artwork;
+
+        return $this;
+    }
+
+    /**
+     * Remove artwork
+     *
+     * @param \AppBundle\Entity\Artwork $artwork
+     */
+    public function removeArtwork(\AppBundle\Entity\Artwork $artwork)
+    {
+        $this->artwork->removeElement($artwork);
+    }
+
+    /**
+     * Get artwork
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtwork()
+    {
+        return $this->artwork;
     }
 }
