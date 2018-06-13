@@ -7,6 +7,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    app.path.artwork_images: /uploads/images/artworks
 
 framework:
     #esi: ~
@@ -80,7 +81,36 @@ fos_user:
 easy_admin:
     entities:
         # change the following to the namespaces of your own entities
-        - AppBundle\Entity\Artwork
-        - AppBundle\Entity\Artist
-        - AppBundle\Entity\Museum
-        - AppBundle\Entity\Cartel
+        Artist:
+          class: AppBundle\Entity\Artist
+        Museum:
+          class: AppBundle\Entity\Museum
+        Cartel:
+          class: AppBundle\Entity\Cartel
+        Artwork:
+           class: AppBundle\Entity\Artwork
+           list:
+              fields:
+                  - title
+                  - { property: 'image', type: 'image', base_path: '%app.path.artwork_images%' }
+                  - artists
+                  - date
+                  - approximativeDate
+                  - cartel
+                  - museum
+           form:
+              fields:
+                  - title
+                  - artists
+                  - date
+                  - approximativeDate
+                  - cartel
+                  - museum
+                  - { property: 'imageFile', type: 'vich_image' }
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        artwork_images:
+            uri_prefix:         '%app.path.artwork_images%'
+            upload_destination: '%kernel.root_dir%/../web%app.path.artwork_images%'
