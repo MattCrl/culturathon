@@ -17,3 +17,4 @@
 /web/bundles/
 *.php~
 /web/build/
+node_modules
