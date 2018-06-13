@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Artwork
@@ -41,6 +43,21 @@ class Artwork
      * @ORM\Column(name="approximative_date", type="boolean")
      */
     private $approximativeDate;
+
+    /**
+     * @var
+     * @ManyToMany(targetEntity="Artist", inversedBy="artwork")
+     *
+     * @JoinTable(name="artwork_artist")
+     */
+    private $artist;
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="Cartel", inversedBy="artwork")
+     */
+    private $cartel;
 
 
     /**

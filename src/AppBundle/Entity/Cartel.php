@@ -28,6 +28,13 @@ class Cartel
      */
     private $name;
 
+    /**
+     * @var
+     *
+     * @ORM\OneToMany(targetEntity="Artwork", mappedBy="cartel")
+     */
+    private $artwork;
+
 
     /**
      * Get id

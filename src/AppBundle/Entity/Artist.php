@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Artist
@@ -69,6 +70,13 @@ class Artist
      * @ORM\Column(name="isApproxDeath", type="boolean", nullable=true)
      */
     private $isApproxDeath;
+
+    /**
+     * @var
+     *
+     * @ManyToMany(targetEntity="Artwork", inversedBy="artist")
+     */
+    private $artwork;
 
 
     /**
