@@ -8,7 +8,6 @@
 
 namespace AppBundle\DataFixtures;
 
-
 use AppBundle\Entity\Cartel;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;

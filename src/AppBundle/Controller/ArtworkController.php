@@ -8,7 +8,6 @@
 
 namespace AppBundle\Controller;
 
-
 use AppBundle\Entity\Artwork;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -27,5 +26,4 @@ class ArtworkController extends Controller
     {
         return $this->render('artwork/artwork.html.twig', ['artwork' => $artwork]);
     }
-
 }

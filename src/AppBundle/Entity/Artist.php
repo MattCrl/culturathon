@@ -14,6 +14,11 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Artist
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     /**
      * @var int
      *
@@ -258,6 +263,7 @@ class Artist
     {
         return $this->isApproxDeath;
     }
+
     /**
      * Constructor
      */

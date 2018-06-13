@@ -12,7 +12,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\Artist;
 
-
 class ArtistFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
@@ -76,6 +75,5 @@ class ArtistFixtures extends Fixture
         $manager->persist($artist7);
 
         $manager->flush();
-
     }
 }
