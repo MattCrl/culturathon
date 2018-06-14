@@ -42,7 +42,6 @@ class Tag
      */
     private $artworks;
 
-
     /**
      * Constructor
      */

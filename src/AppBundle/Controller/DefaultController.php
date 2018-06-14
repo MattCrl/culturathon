@@ -2,9 +2,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Tag;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class DefaultController
@@ -18,7 +18,10 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $tags = $em->getRepository('AppBundle:Tag')->findAll();
+        $tags = $em->getRepository(Tag::class)->findBy(['showHighlight' => true]);
+        $tags = array_filter($tags, function (Tag $t) {
+            return count($t->getArtworks()) > 2;
+        });
 
         return $this->render('default/index.html.twig', [
             'tags' => $tags,
