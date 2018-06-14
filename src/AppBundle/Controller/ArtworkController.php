@@ -24,6 +24,12 @@ class ArtworkController extends Controller
      */
     public function showAction(Artwork $artwork)
     {
-        return $this->render('artwork/artwork.html.twig', ['artwork' => $artwork]);
+        $em = $this->getDoctrine()->getManager();
+        $artworks = $em->getRepository('AppBundle:Artwork')->findAll();
+
+        return $this->render('artwork/artwork.html.twig', [
+            'artwork' => $artwork,
+            'artworks' => $artworks,
+            ]);
     }
 }
