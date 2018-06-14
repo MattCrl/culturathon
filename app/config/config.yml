@@ -106,8 +106,8 @@ easy_admin:
                   - approximativeDate
                   - cartel
                   - museum
-                  - { property: 'imageFile', type: 'vich_image' }
-                  - { property: 'description', type: 'ckeditor' }
+        User:
+          class: AppBundle\Entity\User
 
 vich_uploader:
     db_driver: orm
