@@ -9,7 +9,7 @@ Encore
     .enableSassLoader()
     .enableSourceMaps(!Encore.isProduction())
     .cleanupOutputBeforeBuild()
-    .autoProvidejQuery()
+    // .autoProvidejQuery()
 
 
 module.exports = Encore.getWebpackConfig()
