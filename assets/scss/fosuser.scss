@@ -1,0 +1,24 @@
+body {
+  background-image: url("http://skymaxindustries.com/pellucidtech/wp-content/uploads/2014/10/blue.jpg");
+}
+.container-login {
+  margin: auto;
+  width: 600px;
+  background-color: #494949;
+  margin-top: 20px;
+  padding: 10px 20px 30px 20px;
+  text-align: left;
+  box-shadow: 1px 1px 20px grey;
+  @media screen and (min-width:561px) and (max-width: 768px) {
+    width: 500px;
+  }
+  @media screen and (max-width: 560px) {
+    h1 {
+      font-size: 27px;
+    }
+    width: 300px;
+  }
+  h1 {
+    text-align: center;
+  }
+}

@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <div class="grid">
+        {% for n in 0..25 %}
+            <div class="grid-item">
+                <img src="https://picsum.photos/{{ random(['800/600', '600/800', '400/200']) }}?image={{ n +5}}" class="p-1"  alt="">
+            </div>
+        {% endfor %}
+    </div>
+</div>

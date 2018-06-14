@@ -1,1 +1,260 @@
+$theme-colors: ("primary": #04B0EF);
+
 @import "~bootstrap/scss/bootstrap";
+
+$black: #000000;
+$white: #FFFFFF;
+$blue: #04B0EF;
+$josefin: 'Josefin Sans', sans-serif;
+$narrow: 'PT Sans Narrow', sans-serif;
+
+body {
+  font-family: $narrow;
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  font-weight: 200;
+  .btn, .form-control {
+    border-radius: 0px;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: $josefin;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font-family: $josefin;
+  font-weight: 300;
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: $white;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.mt-navbar {
+  margin-top: 80px;
+}
+
+.home {
+  .background {
+    background-image: url("../../web/images/gallery1.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    .title {
+      font-weight: 200;
+      font-size: 6rem;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  .btn {
+    background-color: $blue;
+    &:hover {
+      background-color: rgba($blue, 0.8);
+    }
+    a {
+      color: $white;
+    }
+  }
+  .discover {
+    display: flex;
+    justify-content: center;
+  }
+  .button {
+    padding-left: 50px;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/**
+ARTWORK PAGE
+ */
+
+.artwork-header {
+  margin-top: 80px;
+  height: 60vh;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
+  .artwork-img {
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .artwork-bg {
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    left: -50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+
+    filter: blur(15px);
+  }
+  .player-control {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    z-index: 10;
+    font-size: 4em;
+
+    text-align: center;
+    &.is-playing {
+      .play {
+        display: none;
+      }
+      .pause {
+        display: block;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    .pause {
+      display: none;
+    }
+  }
+}
+
+.artwork-page {
+  .container-description {
+    .main-description {
+      p {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+.fav .btn-secondary {
+  background-color: $blue;
+}
+
+.unfav .btn-secondary {
+  background-color: #ff1a1c;
+}
+
+/*FIN artwork page*/
+
+//FOOTER
+
+footer {
+  height: 300px;
+
+  .or-spacer {
+    margin: 100px auto;
+    //margin-left: 100px;
+    width: 80%;
+    position: relative;
+
+    .mask {
+      overflow: hidden;
+      height: 20px;
+      &:after {
+        content: '';
+        display: block;
+        margin: -25px auto 0;
+        width: 100%;
+        height: 25px;
+        border-radius: 125px / 12px;
+        box-shadow: 0 0 8px white;
+      }
+    }
+  }
+
+  .footer-container {
+    padding: 110px 0;
+  }
+
+  .copyright {
+    height: 50%;
+  }
+
+  .social-network {
+    i {
+      margin: 4px;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .home {
+    .background {
+      .title {
+        font-size: 3rem;
+      }
+    }
+    .main-img {
+      width: 200px;
+    }
+    .button {
+      padding-left: 15px;
+    }
+  }
+  .artwork-page {
+    .container-description {
+      .main-description {
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+.grid {
+  margin: 0 auto;
+}
+.grid-item {
+  width: 200px;
+  img{
+    display: block;
+    max-width: 100%;
+  }
+}
+
+///  Container square for img
+.square > img{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.square{
+  position: relative;
+  width: 100%;
+}
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.align-squares{
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}

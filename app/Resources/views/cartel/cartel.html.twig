@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block layout %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/cartel.css') }}">
+    {% endblock %}
+
+
+    <div class="container mt-navbar">
+        <div class="row">
+        {% for artwork in cartel.artworks %}
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="{{ artwork.image }}" alt="Card image">
+                <div class="card-body">
+                    <p>{{ artwork.title }}</p>
+                {% for artist in artwork.artists %}
+                    <h2>{{ artist.name }}</h2>
+                {% endfor %}
+                    <p>{{ artwork.date }}</p>
+
+                    <a href="{{ path('artwork', { 'id': artwork.id }) }}" class="btn btn-primary">Voir l'oeuvre</a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}</div>
+    </div>
+
+{% endblock %}
