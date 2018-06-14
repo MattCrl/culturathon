@@ -1,8 +1,11 @@
 <div class="container-fluid">
+    <h2>Découvrez aussi</h2>
     <div class="grid">
-        {% for n in 0..25 %}
+        {% for artwork in relatedArtworks %}
             <div class="grid-item">
-                <img src="https://picsum.photos/{{ random(['800/600', '600/800', '400/200']) }}?image={{ n +5}}" class="p-1"  alt="">
+                <a href="{{ path('artwork', {id: artwork.id}) }}">
+                    <img src="{{ artwork.image }}" class="p-1" alt="">
+                </a>
             </div>
         {% endfor %}
     </div>
