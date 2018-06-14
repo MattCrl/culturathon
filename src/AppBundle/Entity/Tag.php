@@ -95,6 +95,7 @@ class Tag
     public function addArtwork(\AppBundle\Entity\Artwork $artwork)
     {
         $this->artworks[] = $artwork;
+        $artwork->addTag($this);
 
         return $this;
     }
@@ -108,6 +109,7 @@ class Tag
      */
     public function removeArtwork(\AppBundle\Entity\Artwork $artwork)
     {
+        $artwork->removeTag($this);
         return $this->artworks->removeElement($artwork);
     }
 
