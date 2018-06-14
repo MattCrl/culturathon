@@ -80,6 +80,7 @@ fos_user:
 
 # Easy admin config
 easy_admin:
+    site_name: 'Protomotech'
     entities:
         # change the following to the namespaces of your own entities
         Artist:
