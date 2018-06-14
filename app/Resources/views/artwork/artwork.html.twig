@@ -25,6 +25,16 @@
                 <p>{{ artwork.fullDate }}</p>
                 <p>{{ artwork.description }}</p>
             </div>
+            <div>
+              {% if favorite %}
+                  {% set maclassecss = 'unfav' %}
+              {% else %}
+                  {% set maclassecss = 'fav' %}
+              {% endif %}
+              {{ form_start(form) }}
+              {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
+              {{ form_end(form) }}
+            </div>
         </div>
     </div>
     {% include 'artwork/artworkGrid.html.twig' %}
