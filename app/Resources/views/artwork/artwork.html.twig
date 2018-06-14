@@ -3,7 +3,8 @@
 {% block layout %}
 
     <div class="artwork-header">
-        <div class="player-control">
+        {% set soundPath = artwork.sound ? vich_uploader_asset(artwork, 'soundFile') : '/sounds/forest' %}
+        <div class="player-control" data-file="{{ soundPath }}">
             <div class="play ">
                 <i class="fa fa-play-circle"></i>
             </div>
@@ -26,14 +27,14 @@
                 <p>{{ artwork.description }}</p>
             </div>
             <div>
-              {% if favorite %}
-                  {% set maclassecss = 'unfav' %}
-              {% else %}
-                  {% set maclassecss = 'fav' %}
-              {% endif %}
-              {{ form_start(form) }}
-              {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
-              {{ form_end(form) }}
+                {% if favorite %}
+                    {% set maclassecss = 'unfav' %}
+                {% else %}
+                    {% set maclassecss = 'fav' %}
+                {% endif %}
+                {{ form_start(form) }}
+                {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
+                {{ form_end(form) }}
             </div>
         </div>
     </div>

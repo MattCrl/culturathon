@@ -29,8 +29,10 @@ class Atmosphere {
             this.toggle()
         })
 
+        const SrcSound = this.$playerControl.data('file');
+
         this.sound = new Howl({
-            src: ['/sounds/forest.mp3']
+            src: [SrcSound]
         })
 
         const src = $('.vibrant').attr('src')
@@ -60,7 +62,6 @@ class Atmosphere {
     play() {
         this.anime.play()
         this.sound.play()
-        console.log('play')
     }
 
     stop() {
