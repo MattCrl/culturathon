@@ -1,0 +1,33 @@
+{%  for tag in tags %}
+
+<div class="col-xs-12 col-md-6 col-lg-3 mb-5">
+    <div class="row mb-2 justify-content-center">
+        <div class="col-xs-10 main-img mr-3">
+            <img src="{{ tag.artworks[0].image }}">
+        </div>
+        <div class="col-xs-2">
+            <div class="row">
+                <div class="col-xs-12 square-img">
+                    <img src="{{ tag.artworks[1].image }}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 square-img">
+                    <img src="{{ tag.artworks[2].image }}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 button">
+            <h2>{{ tag.name }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 button">
+            <button class="btn"><a href="">Plus de {{ tag.name }}</a></button>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
