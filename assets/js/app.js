@@ -1,4 +1,5 @@
 import 'bootstrap'
+import 'popper.js'
 import {Howl} from 'howler'
 
 
