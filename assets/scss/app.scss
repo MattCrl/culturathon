@@ -81,10 +81,85 @@ h2 {
   font-size: 2rem;
 }
 
-.artwork-img {
-  height: 400px;
+/**
+ARTWORK PAGE
+ */
+
+.artwork-header{
+  margin-top: 80px;
+  height: 60vh;
   width: 100%;
   object-fit: cover;
+  position: relative;
+  overflow:hidden;
+  .artwork-img{
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top:50%;
+    transform: translate(-50%, -50%);
+  }
+  .artwork-bg{
+    object-fit: cover;
+    width: 100%;
+    position:absolute;
+    left: -50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+
+    filter: blur(15px);
+  }
+  .player{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+  }
+}
+
+/*FIN artwork page*/
+
+//FOOTER
+
+footer {
+  margin-top: 700px;
+  height: 300px;
+
+  .or-spacer {
+    margin: 100px auto;
+    //margin-left: 100px;
+    width: 80%;
+    position: relative;
+
+    .mask {
+      overflow: hidden;
+      height: 20px;
+      &:after {
+        content: '';
+        display: block;
+        margin: -25px auto 0;
+        width: 100%;
+        height: 25px;
+        border-radius: 125px / 12px;
+        box-shadow: 0 0 8px white;
+      }
+    }
+  }
+
+  .footer-container {
+    padding: 110px 0;
+  }
+
+  .copyright {
+    height: 50%;
+  }
+
+  .social-network {
+    i {
+      margin: 4px;
+    }
+  }
 }
 
 @media (max-width: 780px) {
