@@ -1,0 +1,18 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/fosuser.css') }}">
+{% endblock %}
+
+{% block fos_user_content %}
+    <div class="container">
+        <h1 class="mt-3 mb-3">Félicitations !</h1>
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    {% if targetUrl %}
+        <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+
+    <a href="{{ path('homepage') }}" class="btn btn-primary btn-block btn-lg">Revenir à la page d'accueil</a>
+
+    </div>
+{% endblock fos_user_content %}
