@@ -3,7 +3,7 @@
 {% block layout %}
 
     <div class="artwork-header">
-        {% set soundPath = artwork.sound ? vich_uploader_asset(artwork, 'soundFile') : '/sounds/forest' %}
+        {% set soundPath = artwork.sound ? vich_uploader_asset(artwork, 'soundFile') : '/sounds/forest.mp3' %}
         <div class="player-control" data-file="{{ soundPath }}">
             <div class="play ">
                 <i class="fa fa-play-circle"></i>
