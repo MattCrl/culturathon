@@ -51,6 +51,11 @@ class Tag
         $this->artworks = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function __toString()
+    {
+      return $this->getName();
+    }
+
     /**
      * Get id.
      *
