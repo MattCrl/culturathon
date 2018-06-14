@@ -13,8 +13,10 @@
     "sass-loader": "^7.0.3"
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "howler": "^2.0.12",
     "imagesloaded": "^4.1.4",
-    "masonry-layout": "^4.2.1"
+    "masonry-layout": "^4.2.1",
+    "node-vibrant": "^3.0.0"
   }
 }
