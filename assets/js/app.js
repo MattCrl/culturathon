@@ -22,6 +22,7 @@ $('.player-control').click(function () {
 $('.grid').imagesLoaded( ()=> {
     $('.grid').masonry({
         itemSelector: '.grid-item',
-        columnWidth: 200
+        columnWidth: 200,
+        fitWidth: true
     });
 });
