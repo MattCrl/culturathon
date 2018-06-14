@@ -100,7 +100,7 @@ easy_admin:
                   - approximativeDate
                   - cartel
                   - museum
-                  - tags
+                  - { property: 'description', type: 'ckeditor' }
            form:
               fields:
                   - title
@@ -109,11 +109,16 @@ easy_admin:
                   - approximativeDate
                   - cartel
                   - museum
+                  - description
                   - tags
         User:
           class: AppBundle\Entity\User
         Tag:
           class: AppBundle\Entity\Tag
+          form:
+            fields:
+                - name
+                - { property: 'artworks', type_options: { by_reference: false } }
 
 vich_uploader:
     db_driver: orm
