@@ -170,6 +170,13 @@ class Artwork
         return $this->date;
     }
 
+    public function getFullDate()
+    {
+      $approx =   $this->getApproximativeDate() ? 'vers.' : '';
+      return trim(sprintf('%s %d', $approx, $this->getDate()));
+
+    }
+
     /**
      * Set image
      *
