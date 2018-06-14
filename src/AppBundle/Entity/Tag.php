@@ -42,11 +42,6 @@ class Tag
      */
     private $artworks;
 
-    public function __toString()
-    {
-        return $this->name;
-    }
-
 
     /**
      * Constructor
