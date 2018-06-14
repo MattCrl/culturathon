@@ -58,21 +58,7 @@ h1, h2, h3, h4 {
       text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
     }
   }
-  .main-img {
-    width: 275px;
-    height: 200px;
-    overflow: hidden;
-    border: 3px solid $black;
-    img {
-      object-fit: cover;
-    }
-  }
-  .square-img {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    border: 3px solid $black;
-  }
+
   .btn {
     background-color: $blue;
     &:hover {
@@ -159,6 +145,14 @@ ARTWORK PAGE
   }
 }
 
+.fav .btn-secondary {
+  background-color: $blue;
+}
+
+.unfav .btn-secondary {
+  background-color: #ff1a1c;
+}
+
 /*FIN artwork page*/
 
 //FOOTER
@@ -229,12 +223,38 @@ footer {
     }
   }
 }
-
-
+.grid {
+  margin: 0 auto;
+}
 .grid-item {
   width: 200px;
   img{
     display: block;
     max-width: 100%;
   }
+}
+
+///  Container square for img
+.square > img{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.square{
+  position: relative;
+  width: 100%;
+}
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.align-squares{
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
 }
