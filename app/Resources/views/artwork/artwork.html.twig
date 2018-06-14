@@ -17,5 +17,15 @@
 
 
         <p>{{ artwork.description }}</p>
+        <div>
+            {% if favorite %}
+                {% set maclassecss = 'unfav' %}
+            {% else %}
+                {% set maclassecss = 'fav' %}
+            {% endif %}
+            {{ form_start(form) }}
+            {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
+            {{ form_end(form) }}
+        </div>
     </div>
 {% endblock %}
