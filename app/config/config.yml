@@ -98,6 +98,7 @@ easy_admin:
                   - approximativeDate
                   - cartel
                   - museum
+                  - { property: 'description', type: 'ckeditor' }
            form:
               fields:
                   - title
@@ -106,6 +107,7 @@ easy_admin:
                   - approximativeDate
                   - cartel
                   - museum
+                  - description
         User:
           class: AppBundle\Entity\User
 
