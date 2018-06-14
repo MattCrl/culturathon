@@ -22,9 +22,12 @@ class DefaultController extends Controller
         $tags = array_filter($tags, function (Tag $t) {
             return count($t->getArtworks()) > 2;
         });
+        $tags = $em->getRepository('AppBundle:Tag')->findAll();
+        $userName = $this->getUser();
 
         return $this->render('default/index.html.twig', [
             'tags' => $tags,
+            'userName' => $userName,
         ]);
     }
 }
