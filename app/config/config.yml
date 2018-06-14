@@ -107,7 +107,7 @@ easy_admin:
                   - cartel
                   - museum
                   - { property: 'imageFile', type: 'vich_image' }
-                  - description
+                  - { property: 'description', type: 'ckeditor' }
 
 vich_uploader:
     db_driver: orm
