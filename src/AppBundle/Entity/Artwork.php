@@ -97,6 +97,13 @@ class Artwork
     private $museum;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="artworks")
+     * @JoinTable(name="artwork_tag")
+     *
+     */
+    private $tags;
+
+    /**
      * @return string
      */
     public function __toString()
@@ -110,6 +117,7 @@ class Artwork
     public function __construct()
     {
         $this->artists = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -172,9 +180,8 @@ class Artwork
 
     public function getFullDate()
     {
-      $approx =   $this->getApproximativeDate() ? 'vers.' : '';
-      return trim(sprintf('%s %d', $approx, $this->getDate()));
-
+        $approx =   $this->getApproximativeDate() ? 'vers.' : '';
+        return trim(sprintf('%s %d', $approx, $this->getDate()));
     }
 
     /**
@@ -366,4 +373,40 @@ class Artwork
         $this->updatedAt = $updatedAt;
     }
 
+
+    /**
+     * Add tag.
+     *
+     * @param \AppBundle\Entity\Tag $tag
+     *
+     * @return Artwork
+     */
+    public function addTag(\AppBundle\Entity\Tag $tag)
+    {
+        $this->tags[] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Remove tag.
+     *
+     * @param \AppBundle\Entity\Tag $tag
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeTag(\AppBundle\Entity\Tag $tag)
+    {
+        return $this->tags->removeElement($tag);
+    }
+
+    /**
+     * Get tags.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
 }
