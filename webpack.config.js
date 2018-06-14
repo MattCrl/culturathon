@@ -4,6 +4,7 @@ Encore
     .setOutputPath('web/build/')
     .setPublicPath('/build')
     .addEntry('app', './assets/js/app.js')
+    .addEntry('fosuser', './assets/scss/fosuser.scss')
     .addStyleEntry('style', './assets/scss/app.scss')
     .enableSassLoader()
     .enableSourceMaps(!Encore.isProduction())

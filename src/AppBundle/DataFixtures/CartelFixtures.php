@@ -68,6 +68,5 @@ class CartelFixtures extends Fixture
         $this->addReference('cartel8', $cartel8);
         $this->addReference('cartel9', $cartel9);
         $this->addReference('cartel10', $cartel10);
-
     }
 }

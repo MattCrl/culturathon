@@ -36,6 +36,7 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes: ['bootstrap_4_layout.html.twig']
 
 # Doctrine Configuration
 doctrine:
@@ -91,6 +92,7 @@ easy_admin:
            class: AppBundle\Entity\Artwork
            list:
               fields:
+                  - id
                   - title
                   - { property: 'image', type: 'image', base_path: '%app.path.artwork_images%' }
                   - artists
@@ -108,8 +110,11 @@ easy_admin:
                   - cartel
                   - museum
                   - description
+                  - tags
         User:
           class: AppBundle\Entity\User
+        Tag:
+          class: AppBundle\Entity\Tag
 
 vich_uploader:
     db_driver: orm
