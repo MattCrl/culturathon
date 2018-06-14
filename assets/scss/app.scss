@@ -52,17 +52,48 @@ h2 {
   font-weight: bold;;
 }
 
-.artwork-img {
-  height: 400px;
+/**
+ARTWORK PAGE
+ */
+
+.artwork-header{
+  margin-top: 80px;
+  height: 60vh;
   width: 100%;
-  object-fit: cover;
+  position: relative;
+  overflow:hidden;
+  .artwork-img{
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top:50%;
+    transform: translate(-50%, -50%);
+  }
+  .artwork-bg{
+    object-fit: cover;
+    width: 100%;
+    position:absolute;
+    left: -50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+
+    filter: blur(15px);
+  }
+  .player{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+  }
 }
 
+/*FIN artwork page*/
 footer {
   margin-top: 700px;
   height: 300px;
   border-top: white 1px solid;
-  box-shadow: 0px -1px 5px 0px rgba(255,255,255,0.5);
+  box-shadow: 0px -1px 5px 0px rgba(255, 255, 255, 0.5);
 
   .footer-container {
     padding-top: 110px;
