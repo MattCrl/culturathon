@@ -104,17 +104,23 @@ easy_admin:
            form:
               fields:
                   - title
-                  - artists
                   - date
                   - approximativeDate
+                  - { property: 'imageFile', type: 'vich_image' }
+                  - artists
                   - cartel
                   - museum
                   - description
                   - tags
+
         User:
           class: AppBundle\Entity\User
         Tag:
           class: AppBundle\Entity\Tag
+          form:
+            fields:
+                - name
+                - { property: 'artworks', type_options: { by_reference: false } }
 
 vich_uploader:
     db_driver: orm

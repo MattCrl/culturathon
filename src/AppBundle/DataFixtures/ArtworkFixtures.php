@@ -28,41 +28,44 @@ class ArtworkFixtures extends Fixture implements DependentFixtureInterface
         $artwork1->setCartel($this->getReference('cartel1'));
         $artwork1->setDate(1615);
         $artwork1->setTitle("L’Embarquement des animaux dans l’arche de Noé");
-        $artwork1->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork1->setImage('/images/Brueghel1.jpg');
         $artwork1->setMuseum();
         $artwork1->setDescription("Ce tableau est l’une des versions d’une composition à succès peinte par Jan Brueghel le Jeune entre 1613 et 1615. Le peintre s’inspire d’une œuvre élaborée par son père. Jan Brueghel l’Ancien (dit Brueghel de Velours) vers 1610 et il n’est d’ailleurs pas interdit de voir dans le petit tableau d’Orléans une œuvre de collaboration entre le père et le fils. Le thème des animaux réunis par Noé dans l’arche à été traité à de nombreuses reprises par l’atelier des Brueghel. La version d’Orléans est elle-même connue par des répliques, attestant de sa grande popularité. 
-
+        
 Son sujet, emprunté à un chapitre de la Genèse, offre le prétexte à un déploiement presque encyclopédique d’espèces animales, européennes ou exotiques, domestiques ou sauvages, faisant de ces petits panneaux de cabinets autant de charmants bestiaires vivement colorés. Ce type de composition pouvait prendre place dans un cabinet de curiosité, où le collectionneur du XVIIᵉ siècle rassemblait objets scientifiques et naturalia, coquillages, animaux naturalisés, cornes, trophées de chasse, coraux, fossiles. Le peintre nous transporte dans les jours précédents le Déluge : Dieu à décidé de punir les hommes en noyant la Terre. Il demande à Noé et à sa famille de bâtir une arche afin d’abriter des couples d’animaux et ainsi repeupler la Terre après la décrue. Devant le spectateur, le peintre aligne une somme considérable d’espèces : lions, chiens, léopards, tortues, porcs épics, bœufs, éléphants, singes, dromadaires, divers rongeurs et de grandes volées d’oiseaux.  Un grand cheval blanc, isolé, servant de point d’appui à la composition, emprunte sa pose majestueuse à certains tableaux de Rubens, dont Brueghel était l’ami proche.");
         $manager->persist($artwork1);
+        $this->addReference('artwork1', $artwork1);
 
         $artwork2 = new Artwork();
         $artwork2->setApproximativeDate(true);
         $artwork2->setCartel($this->getReference('cartel2'));
         $artwork2->setDate(1837);
         $artwork2->setTitle("Episode de la campagne d’Egypte – Bataille d’Héliopolis le 20 mars 1800");
-        $artwork2->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork2->setImage('/images/Cogniet.jpg');
         $artwork2->setMuseum();
         $artwork2->setDescription("Léon Cogniet a largement contribué au musée d’Histoire de France fondé à Versailles par Louis-Philippe, avec notamment les commandes de La Bataille du Thabor (aujourd’hui déposé à Orléans) et La bataille d’Héliopolis, toujours à Versailles. 
 Ce tableau reprend le même sujet dans un format plus réduit destiné au marché de l’art, particulièrement actif sous la Monarchie de Juillet. 
 ");
         $manager->persist($artwork2);
+        $this->addReference('artwork2', $artwork2);
 
         $artwork3 = new Artwork();
         $artwork3->setApproximativeDate(true);
         $artwork3->setCartel($this->getReference('cartel3'));
         $artwork3->setDate(1824);
         $artwork3->setTitle("Tête de vielle femme");
-        $artwork3->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork3->setImage('/images/vieille_femme.jpg');
         $artwork3->setMuseum();
         $artwork3->setDescription("En 1824, Delacroix expose au Salon Scène de massacres de Scio qui rend hommage à la résistance et au courage du peuple grec révolté contre la domination turque. Cette étude prépare la tête de vielle femme à droite de la composition. Léon Cogniet, rendant visite à Delacroix en mai 1824, lors de l’exécution de l’œuvre, admira beaucoup ce personnage qu’il rapprocha de toiles de leur ami commun, Géricault, récemment disparu.");
         $manager->persist($artwork3);
+        $this->addReference('artwork3', $artwork3);
 
         $artwork4 = new Artwork();
         $artwork4->setApproximativeDate(true);
         $artwork4->setCartel($this->getReference('cartel4'));
         $artwork4->setDate(1519);
         $artwork4->setTitle("La Vierge à l’Enfant avec saint Jean Baptiste et saint Joseph");
-        $artwork4->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork4->setImage('/images/le_correge.jpg');
         $artwork4->setMuseum();
         $artwork4->setDescription("Dès le XVIIᵉ siècle, alors que le tableau était au château de Versailles, Charles Le Brun (1619-1690) s’interrogeait sur son attribution, et son état de conservation était jugé critique. L’œuvre a été définitivement rendue à Corrège en 1921 par Roberto Longhi (1890-1970) et sa restauration récente, rendue indispensable par une altération des repeints et des vernis successifs, permet de retrouver une composition homogène, le style et la matière raffinée du peintre. 
 
@@ -70,13 +73,14 @@ Corrège est l’un des plus importants peintres de la deuxième Renaissances it
 
 Ce tableau appartient à la jeunesse de l’artiste. Fort d’un séjour à Rome réalisé vers 1517-1520, le peintre y exprime l’admiration ressentie devant les Madones de Raphaël auxquelles il emprunte les attitudes des personnages. Saint Joseph reprend la pose de la même figure dans La Madone de Lorette de Raphaël (Chantilly, Musée Condé), le petit saint Jean offrant le bâton cruciforme à Jésus s’apparente au même motif dans la Madone du duc d’Albe (Washington, National Gallery of Art), la pose de l’Enfant semble inspirée de la Madone au chardonneret (Florence, Galerie des Offices). Après avoir sans doute appartenu aux collections des Gonzague, le tableau est acquis dans les années 1620 par Charles Ier d’Angleterre. Il passe après sa mort dans la collection du banquier Everhard Jabach qui le vend à Louis XIV en 1662. Installé dans les appartements royaux de Versailles, le tableau est versé au Louvre après la Révolution puis déposé à Orléans en 1872.  ");
         $manager->persist($artwork4);
+        $this->addReference('artwork4', $artwork4);
 
         $artwork5 = new Artwork();
         $artwork5->setApproximativeDate(true);
         $artwork5->setCartel($this->getReference('cartel5'));
         $artwork5->setDate(1751);
         $artwork5->setTitle("Aignan – Thomas Desfriches");
-        $artwork5->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork5->setImage('/images/Perronneau.jpg');
         $artwork5->setMuseum();
         $artwork5->setDescription("L’acquisition en vente publique de ce portrait – sans doute le chef-d’œuvre de Perronneau – est un évènement historique dans l’histoire du musée. Resté chez les descendants de Desfriches depuis le XVIIIᵉ siècle, convoité génération après génération par les plus grands marchands et collectionneurs (il a atteint le prix record de 412.500 euros) son entrée au musée d’Orléans a enrichi les collections non seulement de son plus beau pastel, mais également du portrait du fondateur du musée.
 
@@ -84,26 +88,28 @@ Riche négociant orléanais, Desfriches est de ces personnalités qui changent l
 
 Perronneau a réalisé ce portrait lors de son premier long séjour à Orléans, en 1751. Offert comme bien d’autres pastels à Desfriches, grand amateur et collectionneur, ce portrait scelle une amitié qui conduit régulièrement Perronneau à Orléans où il trouve une clientèle séduite par la nonchalance des attitudes et la touche énergique de ses portraits, au pastel et à l’huile. C’est toutefois dans ce portrait de Desfriches, plus artiste que bourgeois, le carton à dessins sous le bras, que la sprezzatura chère à Perronneau trouve sa plus parfaite incarnation, reflétant la personnalité bienveillante et spirituelle de ce grand homme des Lumières.");
         $manager->persist($artwork5);
+        $this->addReference('artwork5', $artwork5);
 
         $artwork6 = new Artwork();
         $artwork6->setApproximativeDate(true);
         $artwork6->setCartel($this->getReference('cartel6'));
         $artwork6->setDate(2016);
         $artwork6->setTitle("Paysage Urbain");
-        $artwork6->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork6->setImage('/images/man_et_pia1.jpg');
         $artwork6->setMuseum();
         $artwork6->setDescription("Man&Pia est un duo d'artistes formé par Manolo Chétien et Pia Loro, qui se sont rencontrés en 1987 aux Arts appliqués Olivier de Serres à Paris. Lui est créateur graphique et photographe, elle, architecte d'intérieur et plasticienne. Ensemble, ils fondent un studio de design graphique en 1996 et développent un procédé de photographie plastique novateur qui leur permet de faire de nombreuses expositions en France et à l'étranger. 
 
 En parallèle de leur activité de design, Manolo et Pia ont également un atelier dans lequel ils peignent à quatre mains. Ils réalisent des oeuvres à l'acrylique sur toile représentant principalement des paysages aux tons chauds et automnaux dans un style figuratif et stylisé.
 ");
         $manager->persist($artwork6);
+        $this->addReference('artwork6', $artwork6);
 
         $artwork7 = new Artwork();
         $artwork7->setApproximativeDate(true);
         $artwork7->setCartel($this->getReference('cartel7'));
         $artwork7->setDate(null);
         $artwork7->setTitle("Paysage");
-        $artwork7->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork7->setImage('/images/man_et_pia2.jpg');
         $artwork7->setMuseum();
         $artwork7->setDescription("Man&Pia est un duo d'artistes formé par Manolo Chétien et Pia Loro, qui se sont rencontrés en 1987 aux Arts appliqués Olivier de Serres à Paris. Lui est créateur graphique et photographe, elle, architecte d'intérieur et plasticienne. Ensemble, ils fondent un studio de design graphique en 1996 et développent un procédé de photographie plastique novateur qui leur permet de faire de nombreuses expositions en France et à l'étranger. 
 
@@ -111,13 +117,14 @@ En parallèle de leur activité de design, Manolo et Pia ont également un ateli
 ");
 
         $manager->persist($artwork7);
+        $this->addReference('artwork7', $artwork7);
 
         $artwork8 = new Artwork();
         $artwork8->setApproximativeDate(true);
         $artwork8->setCartel($this->getReference('cartel8'));
         $artwork8->setDate(null);
-        $artwork8->setTitle('');
-        $artwork8->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork8->setTitle('MP-006');
+        $artwork8->setImage('/images/MP-006.jpg');
         $artwork8->setMuseum();
         $artwork8->setDescription("Man&Pia est un duo d'artistes formé par Manolo Chétien et Pia Loro, qui se sont rencontrés en 1987 aux Arts appliqués Olivier de Serres à Paris. Lui est créateur graphique et photographe, elle, architecte d'intérieur et plasticienne. Ensemble, ils fondent un studio de design graphique en 1996 et développent un procédé de photographie plastique novateur qui leur permet de faire de nombreuses expositions en France et à l'étranger. 
  
@@ -125,26 +132,28 @@ En parallèle de leur activité de design, Manolo et Pia ont également un ateli
 ");
 
         $manager->persist($artwork8);
+        $this->addReference('artwork8', $artwork8);
 
         $artwork9 = new Artwork();
         $artwork9->setApproximativeDate(true);
         $artwork9->setCartel($this->getReference('cartel9'));
         $artwork9->setDate(null);
-        $artwork9->setTitle('');
-        $artwork9->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork9->setTitle('Manolo Chrétien');
+        $artwork9->setImage('/images/manolo.jpg');
         $artwork9->setMuseum();
         $artwork9->setDescription("Manolo Chrétien est un photographe plasticien. Fils de pilote ayant grandi près de la base aérienne à Orange, il se fascine très jeune, pour l'aéronautique, et ces fantastiques machines crées pour accélérer le temps. Avions, voitures et fusées sont les symboles d'un monde en mouvement qui repousse toutes les frontières. Manolo Chrétien en capture la beauté magique pour l’imprimer sur aluminium. Ses ‘alluminations’ sont le miroir de l'ambition humaine. 
 L’artiste a prolongé sa recherche photographique sur la fluidité et les reflets en investiguant la dynamique des vagues et des flux aquatiques. Au travers son regard, l’océan devient une onde métallique, une mécanique naturelle. Manolo Chrétien vit et travaille en France.
 ");
 
         $manager->persist($artwork9);
+        $this->addReference('artwork9', $artwork9);
 
         $artwork10 = new Artwork();
         $artwork10->setApproximativeDate(true);
         $artwork10->setCartel($this->getReference('cartel10'));
         $artwork10->setDate(null);
-        $artwork10->setTitle('Dassault Mystère IV A');
-        $artwork10->setImage('https://i.pinimg.com/originals/0f/10/25/0f1025df19d854ef75e60523cda095ba.jpg');
+        $artwork10->setTitle('Dassault Mystère IV A  MP-004');
+        $artwork10->setImage('/images/MP-004.jpg');
         $artwork10->setMuseum();
         $artwork10->setDescription("Manolo Chrétien est un photographe plasticien. Fils de pilote ayant grandi près de la base aérienne à Orange, il se fascine très jeune, pour l'aéronautique, et ces fantastiques machines crées pour accélérer le temps. Avions, voitures et fusées sont les symboles d'un monde en mouvement qui repousse toutes les frontières. Manolo Chrétien en capture la beauté magique pour l’imprimer sur aluminium. Ses ‘alluminations’ sont le miroir de l'ambition humaine. 
 L’artiste a prolongé sa recherche photographique sur la fluidité et les reflets en investiguant la dynamique des vagues et des flux aquatiques. Au travers son regard, l’océan devient une onde métallique, une mécanique naturelle. Manolo Chrétien vit et travaille en France.
@@ -159,6 +168,7 @@ L'Inde acquiert 110 exemplaires du Mystère IV, qui sont engagés lors des confl
 ");
 
         $manager->persist($artwork10);
+        $this->addReference('artwork10', $artwork10);
 
         $manager->flush();
     }

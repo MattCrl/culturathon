@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
 
 /**
  * Tag
@@ -29,9 +30,31 @@ class Tag
     private $name;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(name="show_highlight", type="boolean", nullable=true)
+     */
+    private $showHighlight;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Artwork", mappedBy="tags")
+     *
      */
     private $artworks;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->artworks = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function __toString()
+    {
+      return $this->getName();
+    }
 
     /**
      * Get id.
@@ -68,19 +91,6 @@ class Tag
     }
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->artworks = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    public function __toString()
-    {
-        return $this->getName();
-    }
-
-    /**
      * Add artwork.
      *
      * @param \AppBundle\Entity\Artwork $artwork
@@ -90,6 +100,7 @@ class Tag
     public function addArtwork(\AppBundle\Entity\Artwork $artwork)
     {
         $this->artworks[] = $artwork;
+        $artwork->addTag($this);
 
         return $this;
     }
@@ -103,6 +114,7 @@ class Tag
      */
     public function removeArtwork(\AppBundle\Entity\Artwork $artwork)
     {
+        $artwork->removeTag($this);
         return $this->artworks->removeElement($artwork);
     }
 
@@ -114,5 +126,29 @@ class Tag
     public function getArtworks()
     {
         return $this->artworks;
+    }
+
+    /**
+     * Set showHighlight.
+     *
+     * @param bool|null $showHighlight
+     *
+     * @return Tag
+     */
+    public function setShowHighlight($showHighlight = null)
+    {
+        $this->showHighlight = $showHighlight;
+
+        return $this;
+    }
+
+    /**
+     * Get showHighlight.
+     *
+     * @return bool|null
+     */
+    public function getShowHighlight()
+    {
+        return $this->showHighlight;
     }
 }

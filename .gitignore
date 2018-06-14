@@ -18,4 +18,3 @@
 *.php~
 /web/build/
 node_modules
-/web/uploads/
