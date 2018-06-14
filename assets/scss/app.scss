@@ -227,20 +227,10 @@ footer {
   }
 }
 
-.grid {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .grid-item {
-  float: left;
-  overflow: hidden;
-  border: solid 5px $black;
+  width: 200px;
+  img{
+    display: block;
+    max-width: 100%;
+  }
 }
