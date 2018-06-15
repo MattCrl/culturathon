@@ -27,10 +27,12 @@ class CartelController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $cartels = $em->getRepository('AppBundle:Cartel')->findAll();
+        $userName = $this->getUser();
 
         return $this->render('cartel/cartel.html.twig', [
             'cartel' => $cartel,
             'cartels' => $cartels,
+            'userName' => $userName,
         ]);
     }
 

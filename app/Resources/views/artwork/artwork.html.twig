@@ -13,6 +13,7 @@
             </div>
         </div>
         <img src="{{ artwork.image }}" alt="{{ artwork.title }}" class="artwork-bg">
+        <div class="artwork-bg-anim"></div>
         <img src="{{ artwork.image }}" alt="{{ artwork.title }}" class="artwork-img vibrant">
 
     </div>
@@ -24,19 +25,27 @@
                     <h2>{{ artist.name }}</h2>
                 {% endfor %}
                 <p>{{ artwork.fullDate }}</p>
-                <p>{{ artwork.description }}</p>
+                <p class="text-left">{{ artwork.description }}</p>
             </div>
             <div>
-                {% if favorite %}
-                    {% set maclassecss = 'unfav' %}
-                {% else %}
-                    {% set maclassecss = 'fav' %}
+                {% if user is not null %}
+                    {% if favorite %}
+                        {% set maclassecss = 'unfav' %}
+                    {% else %}
+                        {% set maclassecss = 'fav' %}
+                    {% endif %}
+                    {{ form_start(form) }}
+                    {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
+                    {{ form_end(form) }}
                 {% endif %}
-                {{ form_start(form) }}
-                {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
-                {{ form_end(form) }}
             </div>
         </div>
     </div>
     {% include 'artwork/artworkGrid.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('build/artwork.js') }}"></script>
+
 {% endblock %}
