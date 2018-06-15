@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{{ asset('build/tagpage.css') }}">
     {% endblock %}
     <div class="container mt-navbar tags-block p-5">
-        {{ dump(tag.artworks|length) }}
+
        <h1>{{ tag.name }}</h1>
         <div class="row">
             {% for artwork in tag.artworks %}
