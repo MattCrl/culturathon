@@ -77,6 +77,10 @@ h1, h2, h3, h4 {
   }
 }
 
+.hello {
+  font-size: large;
+}
+
 h2 {
   font-size: 2rem;
 }
@@ -223,7 +227,9 @@ footer {
     }
   }
 }
-
+.grid {
+  margin: 0 auto;
+}
 .grid-item {
   width: 200px;
   img{
@@ -256,3 +262,7 @@ footer {
   justify-content: space-between;
   display: flex;
 }
+
+
+
+// Artwork test gradient

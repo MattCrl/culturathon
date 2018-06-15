@@ -42,7 +42,7 @@ class ArtworkController extends Controller
         $form->handleRequest($request);
         $isFav = false;
         if ($form->isSubmitted() && $form->isValid()) {
-            if(empty($result)) {
+            if (empty($result)) {
                 $favorite->setArtwork($artwork);
                 $favorite->setUser($this->getUser());
                 $em->persist($favorite);
@@ -56,11 +56,22 @@ class ArtworkController extends Controller
             }
         }
 
+        /// Related artworks
+        /// TODO order by
+        $related = $em->getRepository(Artwork::class)
+            ->createQueryBuilder('a')
+            ->join('a.tags', 't')
+            ->where('t.id IN ( :ids )')
+            ->setParameter('ids', $artwork->getTags())
+            ->getQuery()
+            ->getResult();
+
         return $this->render('artwork/artwork.html.twig',
             [
                 'artwork' => $artwork,
                 'favorite' => $isFav,
                 'form' => $form->createView(),
+                'relatedArtworks' => $related
             ]);
     }
 }
