@@ -28,14 +28,16 @@
                 <p class="text-left">{{ artwork.description }}</p>
             </div>
             <div>
-                {% if favorite %}
-                    {% set maclassecss = 'unfav' %}
-                {% else %}
-                    {% set maclassecss = 'fav' %}
+                {% if user is not null %}
+                    {% if favorite %}
+                        {% set maclassecss = 'unfav' %}
+                    {% else %}
+                        {% set maclassecss = 'fav' %}
+                    {% endif %}
+                    {{ form_start(form) }}
+                    {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
+                    {{ form_end(form) }}
                 {% endif %}
-                {{ form_start(form) }}
-                {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
-                {{ form_end(form) }}
             </div>
         </div>
     </div>
