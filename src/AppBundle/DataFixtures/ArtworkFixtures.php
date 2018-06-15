@@ -170,10 +170,10 @@ L’artiste a prolongé sa recherche photographique sur la fluidité et les refl
         $artwork10->setApproximativeDate(true);
         $artwork10->setCartel($this->getReference('cartel10'));
         $artwork10->addArtist($this->getReference('artist7'));
-        /*$artwork9->setSound('mp-006.mp3');*/
+        $artwork9->setSound('plane.mp3');
         $artwork10->setDate(null);
         $artwork10->setTitle('Dassault Mystère IV A  MP-004');
-        $artwork10->setImage('/images/MP-004.jpg');
+        $artwork10->setImage('/images/plane.jpg');
         $artwork10->setMuseum();
         $artwork10->setDescription("Manolo Chrétien est un photographe plasticien. Fils de pilote ayant grandi près de la base aérienne à Orange, il se fascine très jeune, pour l'aéronautique, et ces fantastiques machines crées pour accélérer le temps. Avions, voitures et fusées sont les symboles d'un monde en mouvement qui repousse toutes les frontières. Manolo Chrétien en capture la beauté magique pour l’imprimer sur aluminium. Ses ‘alluminations’ sont le miroir de l'ambition humaine. 
 L’artiste a prolongé sa recherche photographique sur la fluidité et les reflets en investiguant la dynamique des vagues et des flux aquatiques. Au travers son regard, l’océan devient une onde métallique, une mécanique naturelle. Manolo Chrétien vit et travaille en France.
