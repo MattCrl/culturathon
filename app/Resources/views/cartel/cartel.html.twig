@@ -8,6 +8,8 @@
 
 
     <div class="container mt-navbar">
+        <h1>{{ cartel.name }}</h1>
+
         <div class="row">
         {% for artwork in cartel.artworks %}
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3">
@@ -20,7 +22,11 @@
                 {% endfor %}
                     <p>{{ artwork.date }}</p>
 
-                    <a href="{{ path('artwork', { 'id': artwork.id }) }}" class="btn btn-primary">Voir l'oeuvre</a>
+                    <a href="{{ path('artwork', { 'id': artwork.id }) }}"
+                       class="btn btn-primary">
+                        Voir l'oeuvre
+                        <i class="ml-2 fa fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
