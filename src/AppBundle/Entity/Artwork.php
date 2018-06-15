@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Artwork
@@ -61,6 +63,18 @@ class Artwork
      */
     private $imageFile;
 
+    /**
+     * @var string
+     * @ORM\Column(name="sound", type="string", length=255, nullable=true)
+     */
+    private $sound;
+
+    /**
+     * @var File
+     * @Vich\UploadableField(mapping="artwork_sounds", fileNameProperty="sound")
+     * @Assert\File(mimeTypes={"audio/mp3", "audio/mpeg"})
+     */
+    private $soundFile;
 
     /**
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
@@ -180,8 +194,10 @@ class Artwork
 
     public function getFullDate()
     {
-        $approx =   $this->getApproximativeDate() ? 'vers.' : '';
-        return trim(sprintf('%s %d', $approx, $this->getDate()));
+        if(!$this->getDate()==0) {
+            $approx = $this->getApproximativeDate() ? 'vers.' : '';
+            return trim(sprintf('%s %d', $approx, $this->getDate()));
+        }
     }
 
     /**
@@ -357,6 +373,7 @@ class Artwork
         return $this->imageFile;
     }
 
+
     /**
      * @return \DateTime
      */
@@ -409,4 +426,46 @@ class Artwork
     {
         return $this->tags;
     }
+
+    /**
+     * @return string
+     */
+    public function getSound()
+    {
+        return $this->sound;
+    }
+
+    /**
+     * @param string $sound
+     * @return Artwork
+     */
+    public function setSound($sound): Artwork
+    {
+        $this->sound = $sound;
+        return $this;
+    }
+
+    /**
+     * @return File
+     */
+    public function getSoundFile()
+    {
+        return $this->soundFile;
+    }
+
+    /**
+     * @param File $soundFile
+     * @return Artwork
+     */
+    public function setSoundFile(File $soundFile): Artwork
+    {
+        $this->soundFile = $soundFile;
+        if ($soundFile) {
+            $this->updatedAt = new \DateTime('now');
+        }
+        $this->soundFile = $soundFile;
+        return $this;
+    }
+
+
 }

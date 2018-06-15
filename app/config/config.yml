@@ -8,6 +8,7 @@ imports:
 parameters:
     locale: en
     app.path.artwork_images: /uploads/images/artworks
+    app.path.artwork_sounds: /sounds
 
 framework:
     #esi: ~
@@ -80,6 +81,7 @@ fos_user:
 
 # Easy admin config
 easy_admin:
+    site_name: 'Protomotech'
     entities:
         # change the following to the namespaces of your own entities
         Artist:
@@ -107,6 +109,7 @@ easy_admin:
                   - date
                   - approximativeDate
                   - { property: 'imageFile', type: 'vich_image' }
+                  - { property: 'soundFile', type: 'vich_file' }
                   - artists
                   - cartel
                   - museum
@@ -128,3 +131,7 @@ vich_uploader:
         artwork_images:
             uri_prefix:         '%app.path.artwork_images%'
             upload_destination: '%kernel.root_dir%/../web%app.path.artwork_images%'
+        artwork_sounds:
+            uri_prefix:         '%app.path.artwork_sounds%'
+            upload_destination: '%kernel.root_dir%/../web%app.path.artwork_sounds%'
+

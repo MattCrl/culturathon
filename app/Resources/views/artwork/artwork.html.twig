@@ -3,7 +3,23 @@
 {% block layout %}
 
     <div class="artwork-header">
-        <div class="player-control">
+        <div class="container-fluid fav-box">
+            <div class="row row-eq-height">
+                <div class="col">
+                    <div class="fav-btn">
+                        {% if user is not null %}
+                            {% if favorite %}
+                                <a href="{{ path('artwork_add', {'id': artwork.id}) }}"><button class="btn btn-primary"><i class="fas fa-star"></i> Ajouter aux Favoris</button></a>
+                            {% else %}
+                                <a href="{{ path('artwork_delete', {'id': artwork.id}) }}"><button class="btn btn-danger"><i class="far fa-star"></i> Supprimer des Favoris</button></a>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% set soundPath = artwork.sound ? vich_uploader_asset(artwork, 'soundFile') : '/sounds/forest.mp3' %}
+        <div class="player-control" data-file="{{ soundPath }}">
             <div class="play ">
                 <i class="fa fa-play-circle"></i>
             </div>
@@ -12,8 +28,9 @@
             </div>
         </div>
         <img src="{{ artwork.image }}" alt="{{ artwork.title }}" class="artwork-bg">
-        <img src="{{ artwork.image }}" alt="{{ artwork.title }}" class="artwork-img">
-
+        <div class="artwork-bg-anim">
+        </div>
+        <img src="{{ artwork.image }}" alt="{{ artwork.title }}" class="artwork-img vibrant">
     </div>
     <div class="container artwork-page">
         <div class="row container-description">
@@ -23,19 +40,36 @@
                     <h2>{{ artist.name }}</h2>
                 {% endfor %}
                 <p>{{ artwork.fullDate }}</p>
-                <p>{{ artwork.description }}</p>
+                <p class="text-left">{{ artwork.description }}</p>
             </div>
-            <div>
-              {% if favorite %}
-                  {% set maclassecss = 'unfav' %}
-              {% else %}
-                  {% set maclassecss = 'fav' %}
-              {% endif %}
-              {{ form_start(form) }}
-              {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
-              {{ form_end(form) }}
-            </div>
+
+
+            {#<div>
+                {% if user is not null %}
+                    {% if favorite %}
+                        <a href="{{ path('artwork_add', {'id': artwork.id}) }}"><button class="btn btn-primary"><i class="fas fa-star"></i> Ajouter aux Favoris</button></a>
+                    {% else %}
+                        <a href="{{ path('artwork_delete', {'id': artwork.id}) }}"><button class="btn btn-danger"><i class="far fa-star"></i> Supprimer des Favoris</button></a>
+                    {% endif %}
+                {% endif %}
+            </div>#}
         </div>
+
+
+        {#Tags associés à cet artwork#}
+        <div class="m-5">
+        {% for tag in artwork.tags %}
+                <a href="{{ path('tag', {'id' : tag.id}) }}" class="btn btn-primary btn-lg mb-2">{{ tag.name }}</a>
+
+        {% endfor %}
+        </div>
+
     </div>
     {% include 'artwork/artworkGrid.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('build/artwork.js') }}"></script>
+
 {% endblock %}
