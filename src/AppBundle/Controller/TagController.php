@@ -16,6 +16,10 @@ class TagController extends Controller
      */
     public function showAction(Tag $tag)
     {
-        return $this->render('tag/tag.html.twig', ['tag' => $tag]);
+        $userName = $this->getUser();
+        return $this->render('tag/tag.html.twig', [
+            'tag' => $tag,
+            'userName' => $userName,
+        ]);
     }
 }

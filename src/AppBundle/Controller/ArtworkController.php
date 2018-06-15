@@ -66,12 +66,16 @@ class ArtworkController extends Controller
             ->getQuery()
             ->getResult();
 
+        $userName = $this->getUser();
+
         return $this->render('artwork/artwork.html.twig',
             [
                 'artwork' => $artwork,
                 'favorite' => $isFav,
                 'form' => $form->createView(),
-                'relatedArtworks' => $related
+                'relatedArtworks' => $related,
+                'user' => $this->getUser(),
+                'userName' => $userName,
             ]);
     }
 }
