@@ -27,6 +27,7 @@ class ArtworkFixtures extends Fixture implements DependentFixtureInterface
         $artwork1->setApproximativeDate(true);
         $artwork1->setCartel($this->getReference('cartel1'));
         $artwork1->addArtist($this->getReference('artist1'));
+        $artwork1->setSound('arche-de-noe.mp3');
         $artwork1->setDate(1615);
         $artwork1->setTitle("L’Embarquement des animaux dans l’arche de Noé");
         $artwork1->setImage('/images/Brueghel1.jpg');
@@ -41,6 +42,7 @@ Son sujet, emprunté à un chapitre de la Genèse, offre le prétexte à un dép
         $artwork2->setApproximativeDate(true);
         $artwork2->setCartel($this->getReference('cartel2'));
         $artwork2->addArtist($this->getReference('artist2'));
+        $artwork2->setSound('campagne-egypte.mp3');
         $artwork2->setDate(1837);
         $artwork2->setTitle("Episode de la campagne d’Egypte – Bataille d’Héliopolis le 20 mars 1800");
         $artwork2->setImage('/images/Cogniet.jpg');
@@ -55,6 +57,7 @@ Ce tableau reprend le même sujet dans un format plus réduit destiné au march�
         $artwork3->setApproximativeDate(true);
         $artwork3->setCartel($this->getReference('cartel3'));
         $artwork3->addArtist($this->getReference('artist3'));
+        $artwork3->setSound('tete-femme.mp3');
         $artwork3->setDate(1824);
         $artwork3->setTitle("Tête de vielle femme");
         $artwork3->setImage('/images/vieille_femme.jpg');
@@ -67,6 +70,7 @@ Ce tableau reprend le même sujet dans un format plus réduit destiné au march�
         $artwork4->setApproximativeDate(true);
         $artwork4->setCartel($this->getReference('cartel4'));
         $artwork4->addArtist($this->getReference('artist4'));
+        $artwork4->setSound('vierge-a-lenfant.mp3');
         $artwork4->setDate(1519);
         $artwork4->setTitle("La Vierge à l’Enfant avec saint Jean Baptiste et saint Joseph");
         $artwork4->setImage('/images/le_correge.jpg');
@@ -83,6 +87,7 @@ Ce tableau appartient à la jeunesse de l’artiste. Fort d’un séjour à Rome
         $artwork5->setApproximativeDate(true);
         $artwork5->setCartel($this->getReference('cartel5'));
         $artwork5->addArtist($this->getReference('artist5'));
+        $artwork5->setSound('portrait-desfriches.mp3');
         $artwork5->setDate(1751);
         $artwork5->setTitle("Aignan – Thomas Desfriches");
         $artwork5->setImage('/images/Perronneau.jpg');
@@ -99,6 +104,7 @@ Perronneau a réalisé ce portrait lors de son premier long séjour à Orléans,
         $artwork6->setApproximativeDate(true);
         $artwork6->setCartel($this->getReference('cartel6'));
         $artwork6->addArtist($this->getReference('artist6'));
+        $artwork6->setSound('paysage-urbain.mp3');
         $artwork6->setDate(2016);
         $artwork6->setTitle("Paysage Urbain");
         $artwork6->setImage('/images/man_et_pia1.jpg');
@@ -114,6 +120,7 @@ En parallèle de leur activité de design, Manolo et Pia ont également un ateli
         $artwork7->setApproximativeDate(true);
         $artwork7->setCartel($this->getReference('cartel7'));
         $artwork7->addArtist($this->getReference('artist6'));
+        $artwork7->setSound('lueur-de-loire.mp3');
         $artwork7->setDate(null);
         $artwork7->setTitle("Paysage");
         $artwork7->setImage('/images/man_et_pia2.jpg');
@@ -130,6 +137,7 @@ En parallèle de leur activité de design, Manolo et Pia ont également un ateli
         $artwork8->setApproximativeDate(true);
         $artwork8->setCartel($this->getReference('cartel8'));
         $artwork8->addArtist($this->getReference('artist6'));
+        $artwork8->setSound('mp-006.mp3');
         $artwork8->setDate(null);
         $artwork8->setTitle('MP-006');
         $artwork8->setImage('/images/MP-006.jpg');
@@ -146,6 +154,7 @@ En parallèle de leur activité de design, Manolo et Pia ont également un ateli
         $artwork9->setApproximativeDate(true);
         $artwork9->setCartel($this->getReference('cartel9'));
         $artwork9->addArtist($this->getReference('artist7'));
+        /*$artwork9->setSound('mp-006.mp3');*/
         $artwork9->setDate(null);
         $artwork9->setTitle('Manolo Chrétien');
         $artwork9->setImage('/images/manolo.jpg');
@@ -161,6 +170,7 @@ L’artiste a prolongé sa recherche photographique sur la fluidité et les refl
         $artwork10->setApproximativeDate(true);
         $artwork10->setCartel($this->getReference('cartel10'));
         $artwork10->addArtist($this->getReference('artist7'));
+        /*$artwork9->setSound('mp-006.mp3');*/
         $artwork10->setDate(null);
         $artwork10->setTitle('Dassault Mystère IV A  MP-004');
         $artwork10->setImage('/images/MP-004.jpg');
