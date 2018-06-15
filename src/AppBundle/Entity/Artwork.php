@@ -194,8 +194,10 @@ class Artwork
 
     public function getFullDate()
     {
-        $approx = $this->getApproximativeDate() ? 'vers.' : '';
-        return trim(sprintf('%s %d', $approx, $this->getDate()));
+        if(!$this->getDate()==0) {
+            $approx = $this->getApproximativeDate() ? 'vers.' : '';
+            return trim(sprintf('%s %d', $approx, $this->getDate()));
+        }
     }
 
     /**
