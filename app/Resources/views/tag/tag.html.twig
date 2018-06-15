@@ -4,7 +4,7 @@
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('build/tagpage.css') }}">
     {% endblock %}
-    <div class="container mt-navbar">
+    <div class="container mt-navbar tags-block p-5">
        <h1>{{ tag.name }}</h1>
         <div class="row">
             {% for artwork in tag.artworks %}
@@ -12,13 +12,17 @@
                     <div class="card">
                         <img class="card-img-top" src="{{ artwork.image }}" alt="Card image">
                         <div class="card-body">
-                            <p>{{ artwork.title }}</p>
+                            <h2>{{ artwork.title }}</h2>
                             {% for artist in artwork.artists %}
-                                <h2>{{ artist.name }}</h2>
+                                <h3>{{ artist.name }}</h3>
                             {% endfor %}
                             <p>{{ artwork.date }}</p>
 
-                            <a href="{{ path('artwork', { 'id': artwork.id }) }}" class="btn btn-primary">Voir l'oeuvre</a>
+                            <a href="{{ path('artwork', { 'id': artwork.id }) }}"
+                               class="btn btn-primary">
+                                Voir l'oeuvre
+                                <i class="ml-2 fa fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
