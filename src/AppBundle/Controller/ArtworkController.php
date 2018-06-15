@@ -71,7 +71,8 @@ class ArtworkController extends Controller
                 'artwork' => $artwork,
                 'favorite' => $isFav,
                 'form' => $form->createView(),
-                'relatedArtworks' => $related
+                'user' => $this->getUser(),
+                'relatedArtworks' => $related,
             ]);
     }
 }
