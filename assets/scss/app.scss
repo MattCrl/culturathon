@@ -111,8 +111,18 @@ ARTWORK PAGE
     left: -50%;
     top: 50%;
     transform: translate(50%, -50%);
-
     filter: blur(15px);
+  }
+  .artwork-bg-anim{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    opacity: 0;
   }
   .player-control {
     position: absolute;
