@@ -2,16 +2,33 @@
 
 {% block layout %}
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('build/favorites.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/tagpage.css') }}">
     {% endblock %}
+    <div class="container mt-navbar tags-block p-5">
 
-    <div class="container mt-navbar">
         <h1>Mes oeuvres favorites</h1>
-            {%  for favorite in favorites %}
-                <p>
-                    <a href="{{ path('artwork', {'id': favorite.artwork.id}) }}">{{ favorite.artwork.title}}</a>
-                </p>
-            {% endfor %}
-    </div>
+        <div class="row">
+            {% for favorite in favorites %}
+                {% set artwork = favorite.artwork %}
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ artwork.image }}" alt="Card image">
+                        <div class="card-body">
+                            <h2>{{ artwork.title }}</h2>
+                            {% for artist in artwork.artists %}
+                                <h3>{{ artist.name }}</h3>
+                            {% endfor %}
+                            <p>{{ artwork.date }}</p>
 
+                            <a href="{{ path('artwork', { 'id': artwork.id }) }}"
+                               class="btn btn-primary">
+                                Voir l'oeuvre
+                                <i class="ml-2 fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
