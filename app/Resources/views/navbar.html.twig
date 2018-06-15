@@ -5,10 +5,6 @@
             <img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
             ART'mosphère
         </a>
-        {#<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>#}
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
@@ -23,15 +19,7 @@
             <div>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Bienvenue {{ userName.userName }}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('favorites_home') }}">Mes favoris</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/logout">Me déconnecter</a>
-                        </div>
+                        <a class="nav-link hello" href="{{ path('favorites_home') }}">Mes favoris</a>
                     </li>
                 </ul>
             </div>
@@ -39,7 +27,7 @@
             <div>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <span class="nav-link hello">Bienvenue</span>
+                        <a class="nav-link hello">Bienvenue</a>
                     </li>
                 </ul>
             </div>
@@ -49,6 +37,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
+
+
 
 {% endblock %}
 
