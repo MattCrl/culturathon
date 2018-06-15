@@ -1,16 +1,17 @@
 {% extends 'layout.html.twig' %}
 
 {% block layout %}
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container">
-        <ul>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/favorites.css') }}">
+    {% endblock %}
+
+    <div class="container mt-navbar">
+        <h1>Mes oeuvres favorites</h1>
             {%  for favorite in favorites %}
-                 <li><a href="{{ path('artwork', {'id': favorite.artwork.id}) }}">{{ favorite.artwork.title}}</a></li>
+                <p>
+                    <a href="{{ path('artwork', {'id': favorite.artwork.id}) }}">{{ favorite.artwork.title}}</a>
+                </p>
             {% endfor %}
-        </ul>
     </div>
 
 {% endblock %}

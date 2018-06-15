@@ -9,6 +9,7 @@ Encore
     .addStyleEntry('cartel', './assets/scss/cartel.scss')
     .addStyleEntry('tagpage', './assets/scss/_tagpage.scss')
     .addStyleEntry('style', './assets/scss/app.scss')
+    .addStyleEntry('favorites', './assets/scss/favorites.scss')
     .enableSassLoader()
     .enableSourceMaps(!Encore.isProduction())
     .cleanupOutputBeforeBuild()
