@@ -1,4 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block layout %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <ul>
+            {%  for favorite in favorites %}
+                 <li><a href="{{ path('artwork', {'id': favorite.artwork.id}) }}">{{ favorite.artwork.title}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
 {% endblock %}
