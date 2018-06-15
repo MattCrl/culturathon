@@ -30,13 +30,10 @@
             <div>
                 {% if user is not null %}
                     {% if favorite %}
-                        {% set maclassecss = 'unfav' %}
+                        <a href="{{ path('artwork_add', {'id': artwork.id}) }}"><button class="btn btn-primary"><i class="fas fa-star"></i> Ajouter aux Favoris</button></a>
                     {% else %}
-                        {% set maclassecss = 'fav' %}
+                        <a href="{{ path('artwork_delete', {'id': artwork.id}) }}"><button class="btn btn-danger"><i class="far fa-star"></i> Supprimer des Favoris</button></a>
                     {% endif %}
-                    {{ form_start(form) }}
-                    {{ form_widget(form, {'attr':{'class':maclassecss }}) }}
-                    {{ form_end(form) }}
                 {% endif %}
             </div>
         </div>
