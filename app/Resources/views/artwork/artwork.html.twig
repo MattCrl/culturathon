@@ -35,11 +35,12 @@
     <div class="container artwork-page">
         <div class="row container-description">
             <div class="main-description ml-4 mr-4">
-                <h1 class="mt-3 mb-3">{{ artwork.title }}</h1>
+                <h1 class="mt-3 mb-2">{{ artwork.title }}</h1>
+                <p>{{ artwork.fullDate }}</p>
                 {% for artist in artwork.artists %}
                     <h2>{{ artist.name }}</h2>
+                        <p class="artist-dates">{{ artist.birthAndDeath }}</p>
                 {% endfor %}
-                <p>{{ artwork.fullDate }}</p>
                 <p class="text-left">{{ artwork.description }}</p>
             </div>
 
