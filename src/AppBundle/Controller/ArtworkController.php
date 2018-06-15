@@ -27,34 +27,15 @@ class ArtworkController extends Controller
      */
     public function showAction(Artwork $artwork, Request $request)
     {
-        $favorite = new Favorite();
-        $formBuilder = $this->createFormBuilder($favorite);
-
         $em = $this->getDoctrine()->getManager();
 
-
         $result = $em->getRepository(Favorite::class)->findOneBy(['artwork' => $artwork->getId(), 'user' => $this->getUser()]);
-        $formBuilder->add("j'aime", SubmitType::class, ['label' => "J'aime"]);
 
-
-        $form = $formBuilder->getForm();
-
-        $form->handleRequest($request);
-        $isFav = false;
-        if ($form->isSubmitted() && $form->isValid()) {
             if (empty($result)) {
-                $favorite->setArtwork($artwork);
-                $favorite->setUser($this->getUser());
-                $em->persist($favorite);
-                $em->flush();
                 $isFav = true;
             } else {
-                $favorite = $result;
-                $em->remove($favorite);
-                $em->flush();
                 $isFav = false;
             }
-        }
 
         /// Related artworks
         /// TODO order by
@@ -72,10 +53,50 @@ class ArtworkController extends Controller
             [
                 'artwork' => $artwork,
                 'favorite' => $isFav,
-                'form' => $form->createView(),
                 'relatedArtworks' => $related,
                 'user' => $this->getUser(),
                 'userName' => $userName,
             ]);
+    }
+
+    /**
+     * @param Artwork $artwork
+     *
+     * @Route("artwork/{id}/add", name="artwork_add")
+     * @Method("GET")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function addAction(Artwork $artwork, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $result = $em->getRepository(Favorite::class)->findOneBy(['artwork' => $artwork->getId(), 'user' => $this->getUser()]);
+
+        $favorite = new Favorite();
+
+        if (empty($result)) {
+            $favorite->setArtwork($artwork);
+            $favorite->setUser($this->getUser());
+            $em->persist($favorite);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('artwork', array('id' => $artwork->getId()));
+    }
+
+    /**
+     * @param Artwork $artwork
+     *
+     * @Route("artwork/{id}/delete", name="artwork_delete")
+     * @Method("GET")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function deleteAction(Artwork $artwork, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $result = $em->getRepository(Favorite::class)->findOneBy(['artwork' => $artwork->getId(), 'user' => $this->getUser()]);
+        $em->remove($result);
+        $em->flush();
+
+        return $this->redirectToRoute('artwork', array('id' => $artwork->getId()));
     }
 }
