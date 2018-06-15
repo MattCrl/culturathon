@@ -28,7 +28,7 @@
                             Bienvenue {{ userName.userName }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Mes favoris</a>
+                            <a class="dropdown-item" href="{{ path('favorites_home') }}">Mes favoris</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/logout">Me déconnecter</a>
                         </div>
