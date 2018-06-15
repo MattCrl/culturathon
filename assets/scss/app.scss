@@ -273,6 +273,13 @@ footer {
   display: flex;
 }
 
-
+ul {
+  list-style: none;
+  li {
+    a {
+      font-size: 1.3em;
+    }
+  }
+}
 
 // Artwork test gradient
