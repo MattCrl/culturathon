@@ -7,7 +7,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-    app.path.artwork_images: /uploads/images/artworks
+    app.path.artwork_images: /images/../
     app.path.artwork_sounds: /sounds
 
 framework:
