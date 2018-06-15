@@ -154,7 +154,7 @@ En parallèle de leur activité de design, Manolo et Pia ont également un ateli
         $artwork9->setApproximativeDate(true);
         $artwork9->setCartel($this->getReference('cartel9'));
         $artwork9->addArtist($this->getReference('artist7'));
-        /*$artwork9->setSound('mp-006.mp3');*/
+        $artwork9->setSound('new-york.mp3');
         $artwork9->setDate(null);
         $artwork9->setTitle('Manolo Chrétien');
         $artwork9->setImage('/images/manolo.jpg');
