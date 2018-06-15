@@ -43,6 +43,14 @@ h1, h2, h3, h4 {
   }
 }
 
+.navbar-expand-lg {
+  .navbar-nav {
+    .dropdown-menu {
+      position: static;
+    }
+  }
+}
+
 .mt-navbar {
   margin-top: 80px;
 }
@@ -125,15 +133,15 @@ ARTWORK PAGE
     transform: translate(50%, -50%);
     filter: blur(15px);
   }
-  .artwork-bg-anim{
+  .artwork-bg-anim {
     width: 100%;
     height: 100%;
     background-color: #000;
-    position:absolute;
-    top:0;
-    right:0;
-    left:0;
-    bottom:0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     opacity: 0;
   }
   .player-control {
@@ -262,16 +270,17 @@ footer {
 .grid {
   margin: 0 auto;
 }
+
 .grid-item {
   width: 200px;
-  img{
+  img {
     display: block;
     max-width: 100%;
   }
 }
 
 ///  Container square for img
-.square > img{
+.square > img {
   position: absolute;
   top: 0;
   height: 100%;
@@ -279,22 +288,22 @@ footer {
   object-fit: cover;
   display: block;
 }
-.square{
+
+.square {
   position: relative;
   width: 100%;
 }
+
 .square:after {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
 
-.align-squares{
+.align-squares {
   flex-direction: column;
   justify-content: space-between;
   display: flex;
 }
-
-
 
 // Artwork test gradient
