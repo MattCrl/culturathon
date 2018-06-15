@@ -4,6 +4,7 @@ Encore
     .setOutputPath('web/build/')
     .setPublicPath('/build')
     .addEntry('app', './assets/js/app.js')
+    .addEntry('artwork', './assets/js/artwork.js')
     .addStyleEntry('fosuser', './assets/scss/fosuser.scss')
     .addStyleEntry('cartel', './assets/scss/cartel.scss')
     .addStyleEntry('tagpage', './assets/scss/_tagpage.scss')
