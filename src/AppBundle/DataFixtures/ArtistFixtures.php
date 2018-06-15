@@ -75,5 +75,13 @@ class ArtistFixtures extends Fixture
         $manager->persist($artist7);
 
         $manager->flush();
+
+        $this->addReference('artist1', $artist1);
+        $this->addReference('artist2', $artist2);
+        $this->addReference('artist3', $artist3);
+        $this->addReference('artist4', $artist4);
+        $this->addReference('artist5', $artist5);
+        $this->addReference('artist6', $artist6);
+        $this->addReference('artist7', $artist7);
     }
 }
