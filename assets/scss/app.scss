@@ -96,6 +96,18 @@ ARTWORK PAGE
   object-fit: cover;
   position: relative;
   overflow: hidden;
+  z-index: 1;
+  .fav-box {
+    height: 100%;
+    padding-bottom: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .fav-btn {
+      position: absolute;
+      z-index: 2;
+    }
+  }
   .artwork-img {
     object-fit: contain;
     max-height: 100%;
@@ -236,7 +248,17 @@ footer {
       }
     }
   }
+
+  .artwork-header {
+    margin-top: 60px;
+    height: 85vh;
+    .artwork-img {
+      max-height: 80%;
+      max-width: 80%;
+    }
+  }
 }
+
 .grid {
   margin: 0 auto;
 }
