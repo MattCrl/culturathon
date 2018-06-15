@@ -74,6 +74,7 @@ class ArtworkController extends Controller
                 'favorite' => $isFav,
                 'form' => $form->createView(),
                 'relatedArtworks' => $related,
+                'user' => $this->getUser(),
                 'userName' => $userName,
             ]);
     }
