@@ -131,6 +131,24 @@ class Artist
         return $this->name;
     }
 
+    public function getBirthAndDeath()
+    {
+        if (!$this->getBirthplace() && !$this->getDeathdate()) {
+            return '';
+        }
+        $birth = $this->getBirthdate();
+        $birthApprox = $this->isApproxBirth ? 'vers.' : '';
+        $birthPlace = $this->getBirthplace() ? $this->getBirthplace() : '';
+        $birthDate = trim($birthApprox . ' ' . $birth);
+
+        $death = $this->getDeathdate();
+        $deathApprox = $this->isApproxDeath ? 'vers.' : '';
+        $deathPlace = $this->getDeathplace() ? $this->getDeathplace() : '';
+        $deathDate = trim($deathApprox . ' ' . $death);
+        return sprintf('%s (%s) - %s (%s)', $birthPlace, $birthDate, $deathPlace, $deathDate);
+
+    }
+
     /**
      * Set birthdate
      *
